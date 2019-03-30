@@ -561,6 +561,8 @@ failure:
 	return -ENOMEM;
 }
 
+EXPORT_SYMBOL(init_domain_proc_info);
+
 void destroy_domain_proc_info(struct domain_proc_info* m)
 {
 	int i;
@@ -572,3 +574,6 @@ void destroy_domain_proc_info(struct domain_proc_info* m)
 	kfree(m->domain_to_cpus);
 	memset(m, 0, sizeof(*m));
 }
+
+EXPORT_SYMBOL(destroy_domain_proc_info);
+

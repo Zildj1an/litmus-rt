@@ -219,6 +219,8 @@ struct bheap_node* bheap_take(bheap_prio_t higher_prio,
 	return node;
 }
 
+EXPORT_SYMBOL(bheap_take);
+
 int bheap_decrease(bheap_prio_t higher_prio, struct bheap_node* node)
 {
 	struct bheap_node  *parent;

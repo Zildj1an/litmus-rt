@@ -6,10 +6,12 @@
 #include <litmus/trace.h>
 
 DEFINE_PER_CPU(bool, litmus_preemption_in_progress);
+EXPORT_SYMBOL(litmus_preemption_in_progress);
 
 /* The rescheduling state of each processor.
  */
 DEFINE_PER_CPU_SHARED_ALIGNED(atomic_t, resched_state);
+EXPORT_SYMBOL(resched_state);
 
 void sched_state_will_schedule(struct task_struct* tsk)
 {

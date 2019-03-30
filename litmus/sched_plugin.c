@@ -57,6 +57,8 @@ void preempt_if_preemptable(struct task_struct* t, int cpu)
 		litmus_reschedule(cpu);
 }
 
+EXPORT_SYMBOL(preempt_if_preemptable);
+
 
 /*************************************************************
  *                   Dummy plugin functions                  *
@@ -256,6 +258,7 @@ int register_sched_plugin(struct sched_plugin* plugin)
 	return 0;
 }
 
+EXPORT_SYMBOL(register_sched_plugin);
 
 /* FIXME: reference counting, etc. */
 struct sched_plugin* find_sched_plugin(const char* name)

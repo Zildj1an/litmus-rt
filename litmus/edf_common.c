@@ -178,6 +178,8 @@ void edf_domain_init(rt_domain_t* rt, check_resched_needed_t resched,
 	rt_domain_init(rt,  edf_ready_order, resched, release);
 }
 
+EXPORT_SYMBOL(edf_domain_init);
+
 /* need_to_preempt - check whether the task t needs to be preempted
  *                   call only with irqs disabled and with  ready_lock acquired
  *                   THIS DOES NOT TAKE NON-PREEMPTIVE SECTIONS INTO ACCOUNT!
@@ -199,3 +201,6 @@ int edf_preemption_needed(rt_domain_t* rt, struct task_struct *t)
 	/* make sure to get non-rt stuff out of the way */
 	return !is_realtime(t) || edf_higher_prio(__next_ready(rt), t);
 }
+
+EXPORT_SYMBOL(edf_preemption_needed);
+
