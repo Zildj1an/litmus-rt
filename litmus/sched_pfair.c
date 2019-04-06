@@ -1178,6 +1178,11 @@ static int __init init_pfair(void)
 	int cpu, err, fs;
 	struct pfair_state *state;
 
+	err = register_sched_plugin(&pfair_plugin, module_refcount(THIS_MODULE));
+
+	if(err < 0)
+		goto out_init
+
 	/*
 	 * initialize short_cut for per-cpu pfair state;
 	 * there may be a problem here if someone removes a cpu
@@ -1205,26 +1210,30 @@ static int __init init_pfair(void)
 	pfair_clusters = NULL;
 	num_pfair_clusters = 0;
 
-	err = register_sched_plugin(&pfair_plugin);
-	if (!err) {
-		fs = make_plugin_proc_dir(&pfair_plugin, &pfair_dir);
-		if (!fs)
-			cluster_file = create_cluster_file(pfair_dir, &pfair_cluster_level);
-		else
-			printk(KERN_ERR "Could not allocate PFAIR procfs dir.\n");
-	}
+	fs = make_plugin_proc_dir(&pfair_plugin, &pfair_dir);
+	if (!fs)
+		cluster_file = create_cluster_file(pfair_dir, &pfair_cluster_level);
+	else
+		printk(KERN_ERR "Could not allocate PFAIR procfs dir.\n");
 
+out_init:
+	
+	try_module_get(THIS_MODULE);
 	return err;
 }
 
 static void __exit clean_pfair(void)
 {
-	kfree(pstate);
+	module_put(THIS_MODULE);
 
-	if (cluster_file)
-		remove_proc_entry("cluster", pfair_dir);
-	if (pfair_dir)
-		remove_plugin_proc_dir(&pfair_plugin);
+	if(unregister_sched_plugin(&pfair_plugin,module_refcount(THIS_MODULE))){
+		kfree(pstate);
+
+		if (cluster_file)
+			remove_proc_entry("cluster", pfair_dir);
+		if (pfair_dir)
+			remove_plugin_proc_dir(&pfair_plugin);
+	}
 }
 
 module_init(init_pfair);

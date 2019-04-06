@@ -1050,21 +1050,35 @@ static struct sched_plugin gsn_edf_plugin __cacheline_aligned_in_smp = {
 
 static int __init init_gsn_edf(void)
 {
-	int cpu;
+	int cpu, err;
 	cpu_entry_t *entry;
 
-	bheap_init(&gsnedf_cpu_heap);
-	/* initialize CPU state */
-	for (cpu = 0; cpu < NR_CPUS; cpu++)  {
-		entry = &per_cpu(gsnedf_cpu_entries, cpu);
-		gsnedf_cpus[cpu] = entry;
-		entry->cpu 	 = cpu;
-		entry->hn        = &gsnedf_heap_node[cpu];
-		bheap_node_init(&entry->hn, entry);
+	err = register_sched_plugin(&gsn_edf_plugin, module_refcount(THIS_MODULE));
+	try_module_get(THIS_MODULE);
+
+	if(!err){
+		bheap_init(&gsnedf_cpu_heap);
+		/* initialize CPU state */
+		for (cpu = 0; cpu < NR_CPUS; cpu++)  {
+			entry = &per_cpu(gsnedf_cpu_entries, cpu);
+			gsnedf_cpus[cpu] = entry;
+			entry->cpu 	 = cpu;
+			entry->hn        = &gsnedf_heap_node[cpu];
+			bheap_node_init(&entry->hn, entry);
+		}
+		edf_domain_init(&gsnedf, NULL, gsnedf_release_jobs);
 	}
-	edf_domain_init(&gsnedf, NULL, gsnedf_release_jobs);
-	return register_sched_plugin(&gsn_edf_plugin);
+
+	return err;
 }
 
+static void clean_gsn_edf(void)
+{
+	module_put(THIS_MODULE);
+
+	if(unregister_sched_plugin(&gsn_edf_plugin,module_refcount(THIS_MODULE)))
+		gsnedf_deactivate_plugin();
+}
 
 module_init(init_gsn_edf);
+module_exit(clean_gsn_edf);

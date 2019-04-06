@@ -671,18 +671,34 @@ static struct sched_plugin psn_edf_plugin __cacheline_aligned_in_smp = {
 
 static int __init init_psn_edf(void)
 {
-	int i;
+	int i, err;
 
+	err = register_sched_plugin(&psn_edf_plugin, module_refcount(THIS_MODULE));
+	
 	/* We do not really want to support cpu hotplug, do we? ;)
 	 * However, if we are so crazy to do so,
 	 * we cannot use num_online_cpu()
 	 */
-	for (i = 0; i < num_online_cpus(); i++) {
-		psnedf_domain_init(remote_pedf(i),
-				   psnedf_check_resched,
-				   NULL, i);
+	if(!err){
+		for (i = 0; i < num_online_cpus(); i++) {
+			psnedf_domain_init(remote_pedf(i),
+					   psnedf_check_resched,
+					   NULL, i);
+		}
 	}
-	return register_sched_plugin(&psn_edf_plugin);
+	
+	try_module_get(THIS_MODULE);
+	return err;
 }
 
+static void __exit exit_psn_edf(void)
+{	
+	module_put(THIS_MODULE);
+
+	if(unregister_sched_plugin(&psn_edf_plugin,module_refcount(THIS_MODULE)))
+		psnedf_deactivate_plugin();
+}
+
+
 module_init(init_psn_edf);
+module_exit(exit_psn_edf);

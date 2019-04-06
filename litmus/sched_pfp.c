@@ -2030,19 +2030,33 @@ static struct sched_plugin pfp_plugin __cacheline_aligned_in_smp = {
 #endif
 };
 
-
 static int __init init_pfp(void)
 {
-	int i;
+	int i, err;
+
+	err = register_sched_plugin(&pfp_plugin, module_refcount(THIS_MODULE));
 
 	/* We do not really want to support cpu hotplug, do we? ;)
 	 * However, if we are so crazy to do so,
 	 * we cannot use num_online_cpu()
 	 */
-	for (i = 0; i < num_online_cpus(); i++) {
-		pfp_domain_init(remote_pfp(i), i);
+	if(!err){
+		for (i = 0; i < num_online_cpus(); i++) {
+			pfp_domain_init(remote_pfp(i), i);
+		}
 	}
-	return register_sched_plugin(&pfp_plugin);
+	try_module_get(THIS_MODULE);
+
+	return err;
+}
+
+static void __exit exit_pfp(void)
+{	
+	module_put(THIS_MODULE);
+
+	if(unregister_sched_plugin(&pfp_plugin,module_refcount(THIS_MODULE)))
+		pfp_deactivate_plugin();
 }
 
 module_init(init_pfp);
+module_exit(exit_pfp);

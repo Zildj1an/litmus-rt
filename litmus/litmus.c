@@ -740,7 +740,7 @@ static int __init _init_litmus(void)
 	 */
 	printk("Starting LITMUS^RT kernel\n");
 
-	register_sched_plugin(&linux_sched_plugin);
+	register_sched_plugin(&linux_sched_plugin, 0);
 
 	bheap_node_cache    = KMEM_CACHE(bheap_node, SLAB_PANIC);
 	release_heap_cache = KMEM_CACHE(release_heap, SLAB_PANIC);
@@ -764,6 +764,8 @@ static void _exit_litmus(void)
 {
 	unregister_reboot_notifier(&shutdown_notifier);
 
+	unregister_sched_plugin(&linux_sched_plugin, 0);
+	
 	exit_litmus_proc();
 	kmem_cache_destroy(bheap_node_cache);
 	kmem_cache_destroy(release_heap_cache);

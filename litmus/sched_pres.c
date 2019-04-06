@@ -605,8 +605,21 @@ static struct sched_plugin pres_plugin = {
 
 static int __init init_pres(void)
 {
-	return register_sched_plugin(&pres_plugin);
+	int err;
+
+	err = register_sched_plugin(&pres_plugin, module_refcount(THIS_MODULE));
+	try_module_get(THIS_MODULE);
+		
+	return err;
+}
+
+static void __exit exit_pres(void)
+{	
+	module_put(THIS_MODULE);
+
+	if(unregister_sched_plugin(&pres_plugin,module_refcount(THIS_MODULE)))
+		pres_deactivate_plugin();
 }
 
 module_init(init_pres);
-
+module_exit(exit_pres);

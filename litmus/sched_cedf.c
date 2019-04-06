@@ -866,8 +866,10 @@ static int __init init_cedf(void)
 {
 	int err, fs;
 
-	err = register_sched_plugin(&cedf_plugin);
-	if (!err) {
+	err = register_sched_plugin(&cedf_plugin, module_refcount(THIS_MODULE));
+	try_module_get(THIS_MODULE);
+
+	if (!err){
 		fs = make_plugin_proc_dir(&cedf_plugin, &cedf_dir);
 		if (!fs)
 			cluster_file = create_cluster_file(cedf_dir, &cluster_config);
@@ -879,11 +881,15 @@ static int __init init_cedf(void)
 
 static void clean_cedf(void)
 {
-	cleanup_cedf();
-	if (cluster_file)
-		remove_proc_entry("cluster", cedf_dir);
-	if (cedf_dir)
-		remove_plugin_proc_dir(&cedf_plugin);
+	module_put(THIS_MODULE);
+
+	if(unregister_sched_plugin(&cedf_plugin,module_refcount(THIS_MODULE))){
+		cleanup_cedf();
+		if (cluster_file)
+			remove_proc_entry("cluster", cedf_dir);
+		if (cedf_dir)
+			remove_plugin_proc_dir(&cedf_plugin);
+	}
 }
 
 module_init(init_cedf);

@@ -214,9 +214,18 @@ static DEFINE_RAW_SPINLOCK(sched_plugins_lock);
 	if (!plugin->func) \
 		plugin->func = litmus_dummy_ ## func;}
 
-/* FIXME: get reference to module  */
-int register_sched_plugin(struct sched_plugin* plugin)
+int register_sched_plugin(struct sched_plugin* plugin, int num_references)
 {
+	int err = 0;
+
+	/* make sure a plugin module is not uploaded more than once */
+	if(unlikely(num_references))
+	{
+		printk(KERN_ALERT "The LITMUS^RT plugin %s is already registered.\n", plugin->plugin_name);
+		err = -EPERM;
+		goto out_reg;
+	}
+
 	printk(KERN_INFO "Registering LITMUS^RT plugin %s.\n",
 	       plugin->plugin_name);
 
@@ -255,12 +264,30 @@ int register_sched_plugin(struct sched_plugin* plugin)
 	list_add(&plugin->list, &sched_plugins);
 	raw_spin_unlock(&sched_plugins_lock);
 
-	return 0;
+out_reg:
+	return err;
 }
 
 EXPORT_SYMBOL(register_sched_plugin);
 
-/* FIXME: reference counting, etc. */
+int unregister_sched_plugin(struct sched_plugin* plugin, int num_references)
+{
+	int unregister = 0;
+
+	if(likely(!num_references))
+	{
+		unregister = 1;
+		raw_spin_lock(&sched_plugins_lock);
+		list_del(plugin->list);
+		raw_spin_unlock(&sched_plugins_lock);
+	}
+
+	return unregister;
+}
+
+EXPORT_SYMBOL(unregister_sched_plugin);
+
+
 struct sched_plugin* find_sched_plugin(const char* name)
 {
 	struct list_head *pos;
