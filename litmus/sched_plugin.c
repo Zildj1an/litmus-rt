@@ -278,7 +278,7 @@ int unregister_sched_plugin(struct sched_plugin* plugin, int num_references)
 	{
 		unregister = 1;
 		raw_spin_lock(&sched_plugins_lock);
-		list_del(plugin->list);
+		list_del(&plugin->list);
 		raw_spin_unlock(&sched_plugins_lock);
 	}
 
