@@ -1181,7 +1181,7 @@ static int __init init_pfair(void)
 	err = register_sched_plugin(&pfair_plugin, module_refcount(THIS_MODULE));
 
 	if(err < 0)
-		goto out_init
+		goto out_init;
 
 	/*
 	 * initialize short_cut for per-cpu pfair state;
