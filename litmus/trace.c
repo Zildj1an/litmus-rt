@@ -561,7 +561,7 @@ static int __init init_ft_overhead_trace(void)
 		ftdev_exit(&cpu_overhead_dev);
 		return err;
 	}
-
+		
 	return 0;
 }
 
