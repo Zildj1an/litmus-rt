@@ -865,7 +865,7 @@ static struct proc_dir_entry *cluster_file = NULL, *cedf_dir = NULL;
 static int __init init_cedf(void)
 {
 	int err, fs;
-
+printk(KERN_ALERT "Debug -> sched_cedf 1\n");
 	err = register_sched_plugin(&cedf_plugin, module_refcount(THIS_MODULE));
 	try_module_get(THIS_MODULE);
 

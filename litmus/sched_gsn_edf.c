@@ -1052,12 +1052,14 @@ static int __init init_gsn_edf(void)
 {
 	int cpu, err;
 	cpu_entry_t *entry;
-
+	printk(KERN_ALERT "Debug -> sched_gsn_edf 1\n");
 	err = register_sched_plugin(&gsn_edf_plugin, module_refcount(THIS_MODULE));
 	try_module_get(THIS_MODULE);
+	printk(KERN_ALERT "Debug -> sched_gsn_edf 2\n");
 
 	if(!err){
 		bheap_init(&gsnedf_cpu_heap);
+			printk(KERN_ALERT "Debug -> sched_gsn_edf 3\n");
 		/* initialize CPU state */
 		for (cpu = 0; cpu < NR_CPUS; cpu++)  {
 			entry = &per_cpu(gsnedf_cpu_entries, cpu);
@@ -1066,9 +1068,10 @@ static int __init init_gsn_edf(void)
 			entry->hn        = &gsnedf_heap_node[cpu];
 			bheap_node_init(&entry->hn, entry);
 		}
+			printk(KERN_ALERT "Debug -> sched_gsn_edf 4\n");
 		edf_domain_init(&gsnedf, NULL, gsnedf_release_jobs);
 	}
-
+	printk(KERN_ALERT "Debug -> sched_gsn_edf 5\n");
 	return err;
 }
 

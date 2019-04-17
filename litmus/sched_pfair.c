@@ -1177,7 +1177,7 @@ static int __init init_pfair(void)
 {
 	int cpu, err, fs;
 	struct pfair_state *state;
-
+printk(KERN_ALERT "Debug -> sched_pfair 1\n");
 	err = register_sched_plugin(&pfair_plugin, module_refcount(THIS_MODULE));
 
 	if(err < 0)
