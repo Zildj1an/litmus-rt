@@ -1052,7 +1052,7 @@ static int __init init_gsn_edf(void)
 {
 	int cpu, err;
 	cpu_entry_t *entry;
-	
+
 	err = register_sched_plugin(&gsn_edf_plugin, module_refcount(THIS_MODULE));
 	try_module_get(THIS_MODULE);
 
