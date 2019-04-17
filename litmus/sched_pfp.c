@@ -2033,7 +2033,7 @@ static struct sched_plugin pfp_plugin __cacheline_aligned_in_smp = {
 static int __init init_pfp(void)
 {
 	int i, err;
-printk(KERN_ALERT "Debug -> init_pfp 1\n");
+
 	err = register_sched_plugin(&pfp_plugin, module_refcount(THIS_MODULE));
 
 	/* We do not really want to support cpu hotplug, do we? ;)

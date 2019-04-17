@@ -604,10 +604,8 @@ static struct sched_plugin pres_plugin = {
 };
 
 static int __init init_pres(void)
-
 {
 	int err;
-printk(KERN_ALERT "Debug -> sched_pres 1\n");
 	err = register_sched_plugin(&pres_plugin, module_refcount(THIS_MODULE));
 	try_module_get(THIS_MODULE);
 		
