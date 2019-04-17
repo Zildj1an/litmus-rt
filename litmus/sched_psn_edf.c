@@ -671,9 +671,14 @@ static struct sched_plugin psn_edf_plugin __cacheline_aligned_in_smp = {
 
 static int __init init_psn_edf(void)
 {
-	int i, err;
+	int i, err, counter = 0;
 
-	err = register_sched_plugin(&psn_edf_plugin, module_refcount(THIS_MODULE));
+#ifdef MODULE
+	try_module_get(THIS_MODULE);
+	counter = module_refcount(THIS_MODULE);
+#endif
+
+	err = register_sched_plugin(&psn_edf_plugin, counter);
 	
 	/* We do not really want to support cpu hotplug, do we? ;)
 	 * However, if we are so crazy to do so,
@@ -687,15 +692,18 @@ static int __init init_psn_edf(void)
 		}
 	}
 	
-	try_module_get(THIS_MODULE);
 	return err;
 }
 
 static void __exit exit_psn_edf(void)
 {	
-	module_put(THIS_MODULE);
+	int counter;
+	
+	/* Special case module was uploaded several times */
+	if(counter = module_refcount(THIS_MODULE))
+		module_put(THIS_MODULE);
 
-	if(unregister_sched_plugin(&psn_edf_plugin,module_refcount(THIS_MODULE)))
+	if(unregister_sched_plugin(&psn_edf_plugin,counter))
 		psnedf_deactivate_plugin();
 }
 

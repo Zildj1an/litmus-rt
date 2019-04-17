@@ -864,10 +864,14 @@ static struct proc_dir_entry *cluster_file = NULL, *cedf_dir = NULL;
 
 static int __init init_cedf(void)
 {
-	int err, fs;
+	int err, fs, counter = 0;
 
-	err = register_sched_plugin(&cedf_plugin, module_refcount(THIS_MODULE));
+#ifdef MODULE
 	try_module_get(THIS_MODULE);
+	counter = module_refcount(THIS_MODULE);
+#endif
+
+	err = register_sched_plugin(&cedf_plugin, counter);
 
 	if (!err){
 		fs = make_plugin_proc_dir(&cedf_plugin, &cedf_dir);
@@ -881,9 +885,13 @@ static int __init init_cedf(void)
 
 static void clean_cedf(void)
 {
-	module_put(THIS_MODULE);
+	int counter;
+	
+	/* Special case module was uploaded several times */
+	if(counter = module_refcount(THIS_MODULE))
+		module_put(THIS_MODULE);
 
-	if(unregister_sched_plugin(&cedf_plugin,module_refcount(THIS_MODULE))){
+	if(unregister_sched_plugin(&cedf_plugin,counter)){
 		cleanup_cedf();
 		if (cluster_file)
 			remove_proc_entry("cluster", cedf_dir);
