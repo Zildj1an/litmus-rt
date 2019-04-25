@@ -871,7 +871,7 @@ static int __init init_cedf(void)
 	counter = module_refcount(THIS_MODULE);
 #endif
 
-	err = register_sched_plugin(&cedf_plugin, counter);
+	err = register_sched_plugin(&cedf_plugin);
 
 	if (!err){
 		fs = make_plugin_proc_dir(&cedf_plugin, &cedf_dir);
@@ -891,7 +891,7 @@ static void clean_cedf(void)
 	if(counter = module_refcount(THIS_MODULE))
 		module_put(THIS_MODULE);
 
-	if(unregister_sched_plugin(&cedf_plugin,counter)){
+	if(unregister_sched_plugin(&cedf_plugin)){
 		cleanup_cedf();
 		if (cluster_file)
 			remove_proc_entry("cluster", cedf_dir);

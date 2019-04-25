@@ -1058,7 +1058,7 @@ static int __init init_gsn_edf(void)
 	counter = module_refcount(THIS_MODULE);
 #endif
 	
-	err = register_sched_plugin(&gsn_edf_plugin, counter);
+	err = register_sched_plugin(&gsn_edf_plugin);
 
 	if(!err){
 		bheap_init(&gsnedf_cpu_heap);
@@ -1086,7 +1086,7 @@ static void clean_gsn_edf(void)
 	if(counter = module_refcount(THIS_MODULE))
 		module_put(THIS_MODULE);
 
-	if(unregister_sched_plugin(&gsn_edf_plugin,counter))
+	if(unregister_sched_plugin(&gsn_edf_plugin))
 		gsnedf_deactivate_plugin();
 }
 

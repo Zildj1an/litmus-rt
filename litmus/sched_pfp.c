@@ -2039,7 +2039,7 @@ static int __init init_pfp(void)
 	counter = module_refcount(THIS_MODULE);
 #endif
 
-	err = register_sched_plugin(&pfp_plugin, counter);
+	err = register_sched_plugin(&pfp_plugin);
 
 	/* We do not really want to support cpu hotplug, do we? ;)
 	 * However, if we are so crazy to do so,
@@ -2062,7 +2062,7 @@ static void __exit exit_pfp(void)
 	if(counter = module_refcount(THIS_MODULE))
 		module_put(THIS_MODULE);
 
-	if(unregister_sched_plugin(&pfp_plugin,counter))
+	if(unregister_sched_plugin(&pfp_plugin))
 		pfp_deactivate_plugin();
 }
 

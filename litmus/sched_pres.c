@@ -612,7 +612,7 @@ static int __init init_pres(void)
 	counter = module_refcount(THIS_MODULE);
 #endif
 
-	err = register_sched_plugin(&pres_plugin, counter);
+	err = register_sched_plugin(&pres_plugin);
 		
 	return err;
 }
@@ -625,7 +625,7 @@ static void __exit exit_pres(void)
 	if(counter = module_refcount(THIS_MODULE))
 		module_put(THIS_MODULE);
 
-	if(unregister_sched_plugin(&pres_plugin,counter))
+	if(unregister_sched_plugin(&pres_plugin))
 		pres_deactivate_plugin();
 }
 

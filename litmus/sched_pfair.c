@@ -1183,7 +1183,7 @@ static int __init init_pfair(void)
 	counter = module_refcount(THIS_MODULE);
 #endif
 
-	err = register_sched_plugin(&pfair_plugin, counter);
+	err = register_sched_plugin(&pfair_plugin);
 
 	if(err < 0)
 		goto out_init;
@@ -1234,7 +1234,7 @@ static void __exit clean_pfair(void)
 	if(counter = module_refcount(THIS_MODULE))
 		module_put(THIS_MODULE);
 
-	if(unregister_sched_plugin(&pfair_plugin,counter)){
+	if(unregister_sched_plugin(&pfair_plugin)){
 		kfree(pstate);
 
 		if (cluster_file)
