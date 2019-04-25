@@ -1175,13 +1175,8 @@ static struct proc_dir_entry *cluster_file = NULL, *pfair_dir = NULL;
 
 static int __init init_pfair(void)
 {
-	int cpu, err, fs, counter = 0;
+	int cpu, err, fs;
 	struct pfair_state *state;
-
-#ifdef MODULE
-	try_module_get(THIS_MODULE);
-	counter = module_refcount(THIS_MODULE);
-#endif
 
 	err = register_sched_plugin(&pfair_plugin);
 
@@ -1228,12 +1223,6 @@ out_init:
 
 static void __exit clean_pfair(void)
 {
-	int counter;
-	
-	/* Special case module was uploaded several times */
-	if(counter = module_refcount(THIS_MODULE))
-		module_put(THIS_MODULE);
-
 	if(unregister_sched_plugin(&pfair_plugin)){
 		kfree(pstate);
 

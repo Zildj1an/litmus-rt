@@ -1050,14 +1050,9 @@ static struct sched_plugin gsn_edf_plugin __cacheline_aligned_in_smp = {
 
 static int __init init_gsn_edf(void)
 {
-	int cpu, err, counter = 0;
+	int cpu, err;
 	cpu_entry_t *entry;
 
-#ifdef MODULE
-	try_module_get(THIS_MODULE);
-	counter = module_refcount(THIS_MODULE);
-#endif
-	
 	err = register_sched_plugin(&gsn_edf_plugin);
 
 	if(!err){
@@ -1080,12 +1075,6 @@ static int __init init_gsn_edf(void)
 
 static void clean_gsn_edf(void)
 {
-	int counter;
-	
-	/* Special case module was uploaded several times */
-	if(counter = module_refcount(THIS_MODULE))
-		module_put(THIS_MODULE);
-
 	if(unregister_sched_plugin(&gsn_edf_plugin))
 		gsnedf_deactivate_plugin();
 }

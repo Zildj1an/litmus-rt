@@ -2032,13 +2032,8 @@ static struct sched_plugin pfp_plugin __cacheline_aligned_in_smp = {
 
 static int __init init_pfp(void)
 {
-	int i, err, counter = 0;
-
-#ifdef MODULE
-	try_module_get(THIS_MODULE);
-	counter = module_refcount(THIS_MODULE);
-#endif
-
+	int i, err;
+	
 	err = register_sched_plugin(&pfp_plugin);
 
 	/* We do not really want to support cpu hotplug, do we? ;)
@@ -2056,12 +2051,6 @@ static int __init init_pfp(void)
 
 static void __exit exit_pfp(void)
 {	
-	int counter;
-	
-	/* Special case module was uploaded several times */
-	if(counter = module_refcount(THIS_MODULE))
-		module_put(THIS_MODULE);
-
 	if(unregister_sched_plugin(&pfp_plugin))
 		pfp_deactivate_plugin();
 }

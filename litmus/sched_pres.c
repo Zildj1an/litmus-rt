@@ -605,26 +605,11 @@ static struct sched_plugin pres_plugin = {
 
 static int __init init_pres(void)
 {
-	int err, counter = 0;
-
-#ifdef MODULE
-	try_module_get(THIS_MODULE);
-	counter = module_refcount(THIS_MODULE);
-#endif
-
-	err = register_sched_plugin(&pres_plugin);
-		
-	return err;
+	return register_sched_plugin(&pres_plugin);;
 }
 
 static void __exit exit_pres(void)
 {	
-	int counter;
-	
-	/* Special case module was uploaded several times */
-	if(counter = module_refcount(THIS_MODULE))
-		module_put(THIS_MODULE);
-
 	if(unregister_sched_plugin(&pres_plugin))
 		pres_deactivate_plugin();
 }
