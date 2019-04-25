@@ -214,12 +214,16 @@ static DEFINE_RAW_SPINLOCK(sched_plugins_lock);
 	if (!plugin->func) \
 		plugin->func = litmus_dummy_ ## func;}
 
-int register_sched_plugin(struct sched_plugin* plugin, int num_references)
+int register_sched_plugin(struct sched_plugin* plugin)
 {
 	int err = 0;
+	struct sched_plugin *aux;
 
 	/* make sure a plugin module is not uploaded more than once */
-	if(unlikely(num_references))
+	
+	aux = find_sched_plugin(plugin->plugin_name);
+	
+	if(unlikely(aux != NULL))
 	{
 		printk(KERN_ALERT "The LITMUS^RT plugin %s is already registered.\n", plugin->plugin_name);
 		err = -EPERM;
@@ -270,17 +274,19 @@ out_reg:
 
 EXPORT_SYMBOL(register_sched_plugin);
 
-int unregister_sched_plugin(struct sched_plugin* plugin, int num_references)
+int unregister_sched_plugin(struct sched_plugin* plugin)
 {
 	int unregister = 0;
 
-	if(likely(!num_references))
+	if(strcmp(litmus->plugin_name, plugin->plugin_name) != 0)
 	{
 		unregister = 1;
 		raw_spin_lock(&sched_plugins_lock);
 		list_del(&plugin->list);
 		raw_spin_unlock(&sched_plugins_lock);
 	}
+	else
+		printk(KERN_ALERT "The currently active plugin can not be removed\n");
 
 	return unregister;
 }

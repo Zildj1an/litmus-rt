@@ -170,8 +170,8 @@ struct sched_plugin {
 
 extern struct sched_plugin *litmus;
 
-int register_sched_plugin(struct sched_plugin* plugin, int num_references);
-int unregister_sched_plugin(struct sched_plugin* plugin, int num_references);
+int register_sched_plugin(struct sched_plugin* plugin);
+int unregister_sched_plugin(struct sched_plugin* plugin);
 struct sched_plugin* find_sched_plugin(const char* name);
 void print_sched_plugins(struct seq_file *m);
 
