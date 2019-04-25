@@ -671,7 +671,7 @@ static struct sched_plugin psn_edf_plugin __cacheline_aligned_in_smp = {
 
 static int __init init_psn_edf(void)
 {
-	int i, err, counter;
+	int i, err;
 
 	err = register_sched_plugin(&psn_edf_plugin);
 	

@@ -605,7 +605,7 @@ static struct sched_plugin pres_plugin = {
 
 static int __init init_pres(void)
 {
-	return register_sched_plugin(&pres_plugin);;
+	return register_sched_plugin(&pres_plugin);
 }
 
 static void __exit exit_pres(void)
