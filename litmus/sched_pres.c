@@ -561,6 +561,7 @@ static long pres_deactivate_plugin(void)
 	struct reservation *res;
 
 	for_each_online_cpu(cpu) {
+		
 		state = cpu_state_for(cpu);
 		raw_spin_lock(&state->lock);
 

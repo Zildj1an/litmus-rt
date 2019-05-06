@@ -680,6 +680,7 @@ static int __init init_psn_edf(void)
 	 * we cannot use num_online_cpu()
 	 */
 	if(!err){
+		
 		for (i = 0; i < num_online_cpus(); i++) {
 			psnedf_domain_init(remote_pedf(i),
 					   psnedf_check_resched,

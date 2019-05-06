@@ -1224,6 +1224,7 @@ out_init:
 static void __exit clean_pfair(void)
 {
 	if(unregister_sched_plugin(&pfair_plugin)){
+		
 		kfree(pstate);
 
 		if (cluster_file)

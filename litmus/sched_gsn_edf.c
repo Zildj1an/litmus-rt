@@ -1056,6 +1056,7 @@ static int __init init_gsn_edf(void)
 	err = register_sched_plugin(&gsn_edf_plugin);
 
 	if(!err){
+		
 		bheap_init(&gsnedf_cpu_heap);
 
 		/* initialize CPU state */

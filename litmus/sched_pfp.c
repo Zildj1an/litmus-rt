@@ -2041,6 +2041,7 @@ static int __init init_pfp(void)
 	 * we cannot use num_online_cpu()
 	 */
 	if(!err){
+		
 		for (i = 0; i < num_online_cpus(); i++) {
 			pfp_domain_init(remote_pfp(i), i);
 		}
