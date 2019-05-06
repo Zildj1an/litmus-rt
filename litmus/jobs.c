@@ -51,7 +51,6 @@ void prepare_for_next_period(struct task_struct *t)
 		setup_release(t, get_release(t) + get_rt_period(t));
 	}
 }
-
 EXPORT_SYMBOL(prepare_for_next_period);
 
 void release_at(struct task_struct *t, lt_t start)
@@ -60,7 +59,6 @@ void release_at(struct task_struct *t, lt_t start)
 	setup_release(t, start);
 	tsk_rt(t)->completed = 0;
 }
-
 EXPORT_SYMBOL(release_at);
 
 void inferred_sporadic_job_release_at(struct task_struct *t, lt_t when)
@@ -115,7 +113,6 @@ long complete_job(void)
 	preempt_enable();
 	return 0;
 }
-
 EXPORT_SYMBOL(complete_job);
 
 static long sleep_until_next_release(void);

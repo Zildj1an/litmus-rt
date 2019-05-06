@@ -314,7 +314,6 @@ void __add_ready(rt_domain_t* rt, struct task_struct *new)
 	bheap_insert(rt->order, &rt->ready_queue, tsk_rt(new)->heap_node);
 	rt->check_resched(rt);
 }
-
 EXPORT_SYMBOL(__add_ready);
 
 /* merge_ready - Add a sorted set of tasks to the rt ready queue. They must be runnable.
@@ -351,5 +350,4 @@ void __add_release(rt_domain_t* rt, struct task_struct *task)
 
 	arm_release_timer(rt);
 }
-
 EXPORT_SYMBOL(__add_release);

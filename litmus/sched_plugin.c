@@ -271,7 +271,6 @@ int register_sched_plugin(struct sched_plugin* plugin)
 out_reg:
 	return err;
 }
-
 EXPORT_SYMBOL(register_sched_plugin);
 
 int unregister_sched_plugin(struct sched_plugin* plugin)
@@ -290,7 +289,6 @@ int unregister_sched_plugin(struct sched_plugin* plugin)
 
 	return unregister;
 }
-
 EXPORT_SYMBOL(unregister_sched_plugin);
 
 
