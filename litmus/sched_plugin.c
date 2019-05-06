@@ -56,7 +56,6 @@ void preempt_if_preemptable(struct task_struct* t, int cpu)
 	if (likely(reschedule))
 		litmus_reschedule(cpu);
 }
-
 EXPORT_SYMBOL(preempt_if_preemptable);
 
 
