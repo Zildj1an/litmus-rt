@@ -1211,6 +1211,7 @@ static int __init init_pfair(void)
 	num_pfair_clusters = 0;
 
 	fs = make_plugin_proc_dir(&pfair_plugin, &pfair_dir);
+	
 	if (!fs)
 		cluster_file = create_cluster_file(pfair_dir, &pfair_cluster_level);
 	else
@@ -1224,7 +1225,7 @@ out_init:
 static void __exit clean_pfair(void)
 {
 	if(unregister_sched_plugin(&pfair_plugin)){
-		
+
 		kfree(pstate);
 
 		if (cluster_file)
