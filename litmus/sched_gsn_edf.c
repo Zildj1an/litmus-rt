@@ -1055,7 +1055,7 @@ static int __init init_gsn_edf(void)
 
 	err = register_sched_plugin(&gsn_edf_plugin);
 
-	if(!err){
+	if (!err) {
 		
 		bheap_init(&gsnedf_cpu_heap);
 
@@ -1076,7 +1076,7 @@ static int __init init_gsn_edf(void)
 
 static void clean_gsn_edf(void)
 {
-	if(unregister_sched_plugin(&gsn_edf_plugin))
+	if (unregister_sched_plugin(&gsn_edf_plugin))
 		gsnedf_deactivate_plugin();
 }
 
