@@ -222,7 +222,7 @@ int register_sched_plugin(struct sched_plugin* plugin)
 	
 	aux = find_sched_plugin(plugin->plugin_name);
 	
-	if(unlikely(aux != NULL))
+	if (unlikely(aux != NULL))
 	{
 		printk(KERN_ALERT "The LITMUS^RT plugin %s is already registered.\n", plugin->plugin_name);
 		err = -EPERM;
@@ -276,7 +276,7 @@ int unregister_sched_plugin(struct sched_plugin* plugin)
 {
 	int unregister = 0;
 
-	if(strcmp(litmus->plugin_name, plugin->plugin_name) != 0)
+	if (strcmp(litmus->plugin_name, plugin->plugin_name) != 0)
 	{
 		unregister = 1;
 		raw_spin_lock(&sched_plugins_lock);

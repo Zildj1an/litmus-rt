@@ -682,7 +682,7 @@ static int __init init_psn_edf(void)
 	 * However, if we are so crazy to do so,
 	 * we cannot use num_online_cpu()
 	 */
-	if(!err){
+	if (!err) {
 		
 		for (i = 0; i < num_online_cpus(); i++) {
 			psnedf_domain_init(remote_pedf(i),
@@ -696,7 +696,7 @@ static int __init init_psn_edf(void)
 
 static void __exit exit_psn_edf(void)
 {	
-	if(unregister_sched_plugin(&psn_edf_plugin))
+	if (unregister_sched_plugin(&psn_edf_plugin))
 		psnedf_deactivate_plugin();
 }
 

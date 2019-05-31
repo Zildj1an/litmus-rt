@@ -2043,7 +2043,7 @@ static int __init init_pfp(void)
 	 * However, if we are so crazy to do so,
 	 * we cannot use num_online_cpu()
 	 */
-	if(!err){
+	if (!err) {
 		
 		for (i = 0; i < num_online_cpus(); i++) {
 			pfp_domain_init(remote_pfp(i), i);
@@ -2055,7 +2055,7 @@ static int __init init_pfp(void)
 
 static void __exit exit_pfp(void)
 {	
-	if(unregister_sched_plugin(&pfp_plugin))
+	if (unregister_sched_plugin(&pfp_plugin))
 		pfp_deactivate_plugin();
 }
 

@@ -1186,7 +1186,7 @@ static int __init init_pfair(void)
 
 	err = register_sched_plugin(&pfair_plugin);
 
-	if(err < 0)
+	if (err < 0)
 		goto out_init;
 
 	/*
@@ -1230,7 +1230,7 @@ out_init:
 
 static void __exit clean_pfair(void)
 {
-	if(unregister_sched_plugin(&pfair_plugin)){
+	if (unregister_sched_plugin(&pfair_plugin)) {
 
 		kfree(pstate);
 

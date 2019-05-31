@@ -614,7 +614,7 @@ static int __init init_pres(void)
 
 static void __exit exit_pres(void)
 {	
-	if(unregister_sched_plugin(&pres_plugin))
+	if (unregister_sched_plugin(&pres_plugin))
 		pres_deactivate_plugin();
 }
 

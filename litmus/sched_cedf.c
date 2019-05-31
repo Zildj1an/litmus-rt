@@ -871,7 +871,7 @@ static int __init init_cedf(void)
 
 	err = register_sched_plugin(&cedf_plugin);
 
-	if (!err){
+	if (!err) {
 
 		fs = make_plugin_proc_dir(&cedf_plugin, &cedf_dir);
 		
@@ -885,7 +885,7 @@ static int __init init_cedf(void)
 
 static void clean_cedf(void)
 {
-	if(unregister_sched_plugin(&cedf_plugin)){
+	if (unregister_sched_plugin(&cedf_plugin)) {
 
 		cleanup_cedf();
 		
