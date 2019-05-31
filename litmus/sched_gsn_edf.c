@@ -1018,6 +1018,7 @@ static long gsnedf_activate_plugin(void)
 	}
 
 	gsnedf_setup_domain_proc();
+	try_module_get(THIS_MODULE);
 
 	return 0;
 }
@@ -1025,6 +1026,8 @@ static long gsnedf_activate_plugin(void)
 static long gsnedf_deactivate_plugin(void)
 {
 	destroy_domain_proc_info(&gsnedf_domain_proc_info);
+	module_put(THIS_MODULE); 
+	
 	return 0;
 }
 

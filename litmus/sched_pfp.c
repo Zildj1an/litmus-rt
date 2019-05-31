@@ -2001,6 +2001,7 @@ static long pfp_activate_plugin(void)
 #endif
 
 	pfp_setup_domain_proc();
+	try_module_get(THIS_MODULE);
 
 	return 0;
 }
@@ -2008,6 +2009,8 @@ static long pfp_activate_plugin(void)
 static long pfp_deactivate_plugin(void)
 {
 	destroy_domain_proc_info(&pfp_domain_proc_info);
+	module_put(THIS_MODULE); 
+
 	return 0;
 }
 

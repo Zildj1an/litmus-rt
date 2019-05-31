@@ -1134,8 +1134,12 @@ static long pfair_activate_plugin(void)
 
 	if (err < 0)
 		cleanup_clusters();
-	else
+	else {
+	
 		pfair_setup_domain_proc();
+		try_module_get(THIS_MODULE);
+	}
+
 
 	return err;
 }
@@ -1152,6 +1156,8 @@ static long pfair_deactivate_plugin(void)
 	}
 	cleanup_clusters();
 	destroy_domain_proc_info(&pfair_domain_proc_info);
+	module_put(THIS_MODULE); 
+
 	return 0;
 }
 

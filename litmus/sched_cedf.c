@@ -833,6 +833,8 @@ static long cedf_activate_plugin(void)
 	clusters_allocated = 1;
 	free_cpumask_var(mask);
 
+    try_module_get(THIS_MODULE);
+
 	cedf_setup_domain_proc();
 
 	return 0;
@@ -841,6 +843,7 @@ static long cedf_activate_plugin(void)
 static long cedf_deactivate_plugin(void)
 {
 	destroy_domain_proc_info(&cedf_domain_proc_info);
+	module_put(THIS_MODULE); 
 	return 0;
 }
 

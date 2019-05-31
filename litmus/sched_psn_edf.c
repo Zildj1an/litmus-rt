@@ -627,6 +627,7 @@ static long psnedf_activate_plugin(void)
 #endif
 
 	psnedf_setup_domain_proc();
+	try_module_get(THIS_MODULE);
 
 	return 0;
 }
@@ -634,6 +635,8 @@ static long psnedf_activate_plugin(void)
 static long psnedf_deactivate_plugin(void)
 {
 	destroy_domain_proc_info(&psnedf_domain_proc_info);
+    module_put(THIS_MODULE);
+
 	return 0;
 }
 

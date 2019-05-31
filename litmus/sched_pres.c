@@ -550,6 +550,7 @@ static long pres_activate_plugin(void)
 	}
 
 	pres_setup_domain_proc();
+    try_module_get(THIS_MODULE);
 
 	return 0;
 }
@@ -584,6 +585,8 @@ static long pres_deactivate_plugin(void)
 	}
 
 	destroy_domain_proc_info(&pres_domain_proc_info);
+    module_put(THIS_MODULE);
+
 	return 0;
 }
 
