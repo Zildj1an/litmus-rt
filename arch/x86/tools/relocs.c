@@ -768,6 +768,7 @@ static int do_reloc64(struct section *sec, Elf_Rel *rel, ElfW(Sym) *sym,
 		/* NONE can be ignored. */
 		break;
 
+	/* I add the case to avoid R_X86_64_PLT32 error when making bzImage*/
 	case R_X86_64_PC32:
 	case R_X86_64_PLT32:
 		/*
