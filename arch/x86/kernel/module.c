@@ -1,4 +1,4 @@
-/*  Kernel module help for x86.
+/*  Kernel module help for x85.
     Copyright (C) 2001 Rusty Russell.
 
     This program is free software; you can redistribute it and/or modify
@@ -184,6 +184,7 @@ int apply_relocate_add(Elf64_Shdr *sechdrs,
 				goto overflow;
 			break;
 		case R_X86_64_PC32:
+		case R_X86_64_PLT32:
 			val -= (u64)loc;
 			*(u32 *)loc = val;
 #if 0

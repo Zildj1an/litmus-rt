@@ -1,0 +1,824 @@
+In file included from arch/x86/tools/relocs_64.c:17:
+In function ‘sort_relocs.isra.5’,
+    inlined from ‘emit_relocs’ at arch/x86/tools/relocs.c:995:2,
+    inlined from ‘process_64’ at arch/x86/tools/relocs.c:1099:2:
+arch/x86/tools/relocs.c:953:2: warning: argument 1 null where non-null expected [-Wnonnull]
+  qsort(r->offset, r->count, sizeof(r->offset[0]), cmp_relocs);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from arch/x86/tools/relocs.h:6,
+                 from arch/x86/tools/relocs_64.c:1:
+arch/x86/tools/relocs.c: In function ‘process_64’:
+/usr/include/stdlib.h:827:13: note: in a call to function ‘qsort’ declared here
+ extern void qsort (void *__base, size_t __nmemb, size_t __size,
+             ^~~~~
+make[1]: *** No rule to make target 'debian/certs/debian-uefi-certs.pem', needed by 'certs/x509_certificate_list'.  Stop.
+make[1]: *** Waiting for unfinished jobs....
+init/calibrate.o: warning: objtool: calibrate_delay.cold.0()+0x0: frame pointer state mismatch
+certs/system_keyring.o: warning: objtool: verify_pkcs7_signature.cold.0()+0x0: frame pointer state mismatch
+make: *** [Makefile:990: certs] Error 2
+make: *** Waiting for unfinished jobs....
+kernel/sysctl_binary.o: warning: objtool: do_sysctl.isra.2.part.3.cold.4()+0x0: frame pointer state mismatch
+kernel/panic.o: warning: objtool: add_taint.cold.6()+0x0: frame pointer state mismatch
+kernel/panic.o: warning: objtool: nmi_panic.cold.7()+0x0: frame pointer state mismatch
+kernel/panic.o: warning: objtool: print_oops_end_marker.cold.8()+0x0: frame pointer state mismatch
+kernel/panic.o: warning: objtool: __warn.cold.9()+0x0: frame pointer state mismatch
+kernel/capability.o: warning: objtool: ns_capable_common.cold.3()+0x0: frame pointer state mismatch
+kernel/resource.o: warning: objtool: insert_resource_expand_to_fit.cold.11()+0x0: frame pointer state mismatch
+kernel/resource.o: warning: objtool: iomem_map_sanity_check.cold.12()+0x0: frame pointer state mismatch
+mm/oom_kill.o: warning: objtool: oom_kill_process.cold.16()+0x0: frame pointer state mismatch
+mm/oom_kill.o: warning: objtool: out_of_memory.cold.17()+0x0: frame pointer state mismatch
+init/main.o: warning: objtool: do_one_initcall.cold.5()+0x0: frame pointer state mismatch
+kernel/softirq.o: warning: objtool: tasklet_kill.cold.17()+0x0: frame pointer state mismatch
+init/do_mounts.o: warning: objtool: name_to_dev_t.cold.6()+0x0: frame pointer state mismatch
+kernel/kmod.o: warning: objtool: __request_module.cold.5()+0x0: frame pointer state mismatch
+fs/open.o: warning: objtool: filp_close.cold.19()+0x0: frame pointer state mismatch
+kernel/sysctl.o: warning: objtool: proc_dostring.cold.15()+0x0: frame pointer state mismatch
+kernel/sysctl.o: warning: objtool: __do_proc_doulongvec_minmax.cold.16()+0x0: frame pointer state mismatch
+kernel/sysctl.o: warning: objtool: __do_proc_dointvec.cold.17()+0x0: frame pointer state mismatch
+kernel/exit.o: warning: objtool: do_exit.cold.19()+0x0: frame pointer state mismatch
+kernel/params.o: warning: objtool: param_set_copystring.cold.10()+0x0: frame pointer state mismatch
+kernel/params.o: warning: objtool: param_set_charp.cold.11()+0x0: frame pointer state mismatch
+kernel/params.o: warning: objtool: param_array_set.cold.12()+0x0: frame pointer state mismatch
+kernel/params.o: warning: objtool: param_attr_store.cold.13()+0x0: frame pointer state mismatch
+kernel/params.o: warning: objtool: parse_args.cold.14()+0x0: frame pointer state mismatch
+kernel/workqueue.c: In function ‘create_worker’:
+kernel/workqueue.c:1772:40: warning: ‘%d’ directive output may be truncated writing between 1 and 10 bytes into a region of size between 5 and 14 [-Wformat-truncation=]
+   snprintf(id_buf, sizeof(id_buf), "%d:%d%s", pool->cpu, id,
+                                        ^~
+kernel/workqueue.c:1772:36: note: directive argument in the range [0, 2147483647]
+   snprintf(id_buf, sizeof(id_buf), "%d:%d%s", pool->cpu, id,
+                                    ^~~~~~~~~
+kernel/workqueue.c:1772:3: note: ‘snprintf’ output between 4 and 23 bytes into a destination of size 16
+   snprintf(id_buf, sizeof(id_buf), "%d:%d%s", pool->cpu, id,
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     pool->attrs->nice < 0  ? "H" : "");
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+kernel/cpu.o: warning: objtool: notify_prepare.cold.20()+0x0: frame pointer state mismatch
+kernel/cpu.o: warning: objtool: notify_dead.cold.21()+0x0: frame pointer state mismatch
+kernel/cpu.o: warning: objtool: do_cpu_up.cold.22()+0x0: frame pointer state mismatch
+kernel/cpu.o: warning: objtool: freeze_secondary_cpus.cold.23()+0x0: frame pointer state mismatch
+kernel/cpu.o: warning: objtool: enable_nonboot_cpus.cold.24()+0x0: frame pointer state mismatch
+kernel/reboot.o: warning: objtool: kernel_restart.cold.1()+0x0: frame pointer state mismatch
+kernel/reboot.o: warning: objtool: reboot_work_func.cold.2()+0x0: frame pointer state mismatch
+kernel/cred.o: warning: objtool: put_cred_rcu.cold.7()+0x0: frame pointer state mismatch
+kernel/signal.o: warning: objtool: __sigqueue_alloc.cold.51()+0x0: frame pointer state mismatch
+kernel/signal.o: warning: objtool: get_signal.cold.52()+0x0: frame pointer state mismatch
+kernel/fork.o: warning: objtool: __mmdrop.cold.45()+0x0: frame pointer state mismatch
+kernel/printk/printk.c: In function ‘control_devkmsg’:
+kernel/printk/printk.c:140:3: warning: ‘strncpy’ output truncated before terminating nul copying 2 bytes from a string of the same length [-Wstringop-truncation]
+   strncpy(devkmsg_log_str, "on", 2);
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+kernel/printk/printk.c:143:3: warning: ‘strncpy’ output truncated before terminating nul copying 3 bytes from a string of the same length [-Wstringop-truncation]
+   strncpy(devkmsg_log_str, "off", 3);
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+kernel/printk/nmi.o: warning: objtool: __printk_nmi_flush.cold.1()+0x0: frame pointer state mismatch
+kernel/irq/irqdesc.o: warning: objtool: irq_sysfs_add.cold.16()+0x0: frame pointer state mismatch
+arch/x86/entry/vsyscall/vsyscall_64.o: warning: objtool: warn_bad_vsyscall.cold.5()+0x0: frame pointer state mismatch
+mm/filemap.o: warning: objtool: __delete_from_page_cache.cold.51()+0x0: frame pointer state mismatch
+kernel/livepatch/core.o: warning: objtool: klp_find_object_symbol.cold.16()+0x0: frame pointer state mismatch
+kernel/livepatch/core.o: warning: objtool: klp_disable_patch.cold.17()+0x0: frame pointer state mismatch
+kernel/livepatch/core.o: warning: objtool: klp_resolve_symbols.isra.13.cold.18()+0x0: frame pointer state mismatch
+kernel/livepatch/core.o: warning: objtool: klp_write_object_relocations.cold.19()+0x0: frame pointer state mismatch
+kernel/livepatch/core.o: warning: objtool: __klp_enable_patch.cold.20()+0x0: frame pointer state mismatch
+kernel/livepatch/core.o: warning: objtool: enabled_store.cold.21()+0x0: frame pointer state mismatch
+kernel/livepatch/core.o: warning: objtool: klp_register_patch.cold.22()+0x0: frame pointer state mismatch
+kernel/livepatch/core.o: warning: objtool: klp_module_coming.cold.23()+0x0: frame pointer state mismatch
+kernel/livepatch/core.o: warning: objtool: klp_module_going.cold.24()+0x0: frame pointer state mismatch
+kernel/irq/handle.o: warning: objtool: __handle_irq_event_percpu.cold.5()+0x0: frame pointer state mismatch
+kernel/time/itimer.o: warning: objtool: SyS_setitimer.cold.6()+0x0: frame pointer state mismatch
+kernel/workqueue.o: warning: objtool: __queue_work.cold.38()+0x0: frame pointer state mismatch
+kernel/workqueue.o: warning: objtool: process_one_work.cold.39()+0x0: frame pointer state mismatch
+kernel/workqueue.o: warning: objtool: wq_update_unbound_numa.cold.40()+0x0: frame pointer state mismatch
+kernel/workqueue.o: warning: objtool: print_worker_info.cold.41()+0x0: frame pointer state mismatch
+kernel/workqueue.o: warning: objtool: show_workqueue_state.cold.42()+0x0: frame pointer state mismatch
+kernel/power/process.o: warning: objtool: try_to_freeze_tasks.cold.2()+0x0: frame pointer state mismatch
+kernel/power/process.o: warning: objtool: freeze_processes.cold.3()+0x7: call without frame pointer save/setup
+mm/page_alloc.o: warning: objtool: __parse_numa_zonelist_order.cold.100()+0x0: frame pointer state mismatch
+mm/page_alloc.o: warning: objtool: bad_page.cold.101()+0x0: frame pointer state mismatch
+mm/page_alloc.o: warning: objtool: free_reserved_area.cold.102()+0x0: frame pointer state mismatch
+mm/page_alloc.o: warning: objtool: warn_alloc.cold.103()+0x0: frame pointer state mismatch
+mm/page_alloc.o: warning: objtool: show_free_areas.cold.104()+0x0: frame pointer state mismatch
+mm/page_alloc.o: warning: objtool: alloc_contig_range.cold.105()+0x0: frame pointer state mismatch
+kernel/printk/printk.o: warning: objtool: check_syslog_permissions.cold.28()+0x0: frame pointer state mismatch
+kernel/printk/printk.o: warning: objtool: devkmsg_release.cold.29()+0x0: frame pointer state mismatch
+kernel/printk/printk.o: warning: objtool: suspend_console.cold.30()+0x0: frame pointer state mismatch
+kernel/printk/printk.o: warning: objtool: devkmsg_write.cold.31()+0x0: frame pointer state mismatch
+kernel/printk/printk.o: warning: objtool: register_console.cold.32()+0x0: frame pointer state mismatch
+kernel/printk/printk.o: warning: objtool: dump_stack_print_info.cold.33()+0x0: frame pointer state mismatch
+mm/backing-dev.o: warning: objtool: pdflush_proc_obsolete.cold.15()+0x0: frame pointer state mismatch
+kernel/time/hrtimer.o: warning: objtool: hrtimer_interrupt.cold.35()+0x0: frame pointer state mismatch
+kernel/time/hrtimer.o: warning: objtool: hrtimer_run_queues.cold.36()+0x0: frame pointer state mismatch
+mm/shmem.o: warning: objtool: shmem_parse_options.cold.39()+0x0: frame pointer state mismatch
+kernel/sched/rt.o: warning: objtool: update_curr_rt.cold.52()+0x0: frame pointer state mismatch
+kernel/printk/braille.o: warning: objtool: _braille_console_setup.cold.0()+0x0: frame pointer state mismatch
+kernel/sched/deadline.o: warning: objtool: replenish_dl_entity.cold.46()+0x0: frame pointer state mismatch
+kernel/time/posix-cpu-timers.o: warning: objtool: run_posix_cpu_timers.cold.15()+0x0: frame pointer state mismatch
+fs/file_table.o: warning: objtool: get_empty_filp.cold.8()+0x0: frame pointer state mismatch
+mm/vmscan.o: warning: objtool: shrink_slab.part.33.cold.47()+0x0: frame pointer state mismatch
+mm/vmscan.o: warning: objtool: kswapd_run.cold.48()+0x0: frame pointer state mismatch
+kernel/time/posix-timers.o: warning: objtool: posix_timers_register_clock.cold.11()+0x0: frame pointer state mismatch
+kernel/stacktrace.o: warning: objtool: print_stack_trace.cold.2()+0x0: frame pointer state mismatch
+kernel/irq/manage.o: warning: objtool: __setup_irq.cold.42()+0x0: frame pointer state mismatch
+kernel/time/ntp.o: warning: objtool: second_overflow.cold.6()+0x0: frame pointer state mismatch
+mm/percpu.o: warning: objtool: pcpu_alloc.cold.18()+0x0: frame pointer state mismatch
+kernel/profile.o: warning: objtool: profile_setup.cold.11()+0x0: frame pointer state mismatch
+kernel/irq/spurious.o: warning: objtool: note_interrupt.cold.7()+0x0: frame pointer state mismatch
+kernel/rcu/tree.o: warning: objtool: show_rcu_gp_kthreads.cold.79()+0x0: frame pointer state mismatch
+kernel/rcu/tree.o: warning: objtool: rcu_exp_wait_wake.cold.80()+0x0: frame pointer state mismatch
+kernel/rcu/tree.o: warning: objtool: rcu_check_callbacks.cold.81()+0x0: frame pointer state mismatch
+kernel/rcu/tree.o: warning: objtool: rcu_read_unlock_special.cold.82()+0x0: frame pointer state mismatch
+fs/super.o: warning: objtool: generic_shutdown_super.cold.15()+0x0: frame pointer state mismatch
+fs/super.o: warning: objtool: freeze_super.cold.16()+0x0: frame pointer state mismatch
+fs/super.o: warning: objtool: thaw_super.cold.17()+0x0: frame pointer state mismatch
+kernel/time/timekeeping.o: warning: objtool: __timekeeping_inject_sleeptime.constprop.19.cold.24()+0x0: frame pointer state mismatch
+kernel/time/timekeeping.o: warning: objtool: update_wall_time.cold.25()+0x0: frame pointer state mismatch
+kernel/time/clocksource.o: warning: objtool: __clocksource_select.cold.4()+0x0: frame pointer state mismatch
+kernel/time/clocksource.o: warning: objtool: __clocksource_update_freq_scale.cold.5()+0x0: frame pointer state mismatch
+mm/slab_common.o: warning: objtool: kmem_cache_create.cold.23()+0x0: frame pointer state mismatch
+kernel/dma.o: warning: objtool: free_dma.cold.0()+0x0: frame pointer state mismatch
+kernel/time/clockevents.o: warning: objtool: clockevents_program_min_delta.part.6.cold.11()+0x0: frame pointer state mismatch
+kernel/trace/ftrace.o: warning: objtool: ftrace_bug.cold.59()+0x0: frame pointer state mismatch
+kernel/trace/ftrace.o: warning: objtool: ftrace_process_locs.cold.60()+0x0: frame pointer state mismatch
+kernel/trace/ftrace.o: warning: objtool: register_ftrace_graph.cold.61()+0x0: frame pointer state mismatch
+kernel/module_signing.o: warning: objtool: mod_verify_sig.cold.0()+0x0: frame pointer state mismatch
+kernel/futex.o: warning: objtool: fixup_owner.cold.25()+0x0: frame pointer state mismatch
+mm/debug.o: warning: objtool: __dump_page.cold.1()+0x0: frame pointer state mismatch
+kernel/time/tick-oneshot.o: warning: objtool: tick_switch_to_oneshot.cold.2()+0x0: frame pointer state mismatch
+kernel/locking/rtmutex.o: warning: objtool: rt_mutex_adjust_prio_chain.cold.23()+0x0: frame pointer state mismatch
+kernel/smp.o: warning: objtool: flush_smp_call_function_queue.cold.5()+0x0: frame pointer state mismatch
+kernel/sched/debug.o: warning: objtool: sched_debug_header.cold.6()+0x0: frame pointer state mismatch
+kernel/sched/debug.o: warning: objtool: print_cpu.cold.7()+0x0: frame pointer state mismatch
+kernel/sched/debug.o: warning: objtool: print_cfs_rq.cold.8()+0x0: frame pointer state mismatch
+kernel/sched/debug.o: warning: objtool: print_rt_rq.cold.9()+0x0: frame pointer state mismatch
+kernel/sched/debug.o: warning: objtool: print_dl_rq.cold.10()+0x0: frame pointer state mismatch
+kernel/sched/debug.o: warning: objtool: print_numa_stats.cold.11()+0x0: frame pointer state mismatch
+kernel/sched/debug.o: warning: objtool: proc_sched_show_task.cold.12()+0x0: frame pointer state mismatch
+fs/char_dev.o: warning: objtool: __register_chrdev_region.cold.2()+0x0: frame pointer state mismatch
+kernel/time/tick-broadcast.o: warning: objtool: err_broadcast.cold.11()+0x0: frame pointer state mismatch
+kernel/time/tick-broadcast.o: warning: objtool: tick_device_uses_broadcast.cold.12()+0x0: frame pointer state mismatch
+fs/stat.o: warning: objtool: cp_old_stat.cold.4()+0x0: frame pointer state mismatch
+kernel/events/core.o: warning: objtool: perf_duration_warn.cold.117()+0x0: frame pointer state mismatch
+fs/exec.c: In function ‘get_task_comm’:
+fs/exec.c:1216:32: warning: argument to ‘sizeof’ in ‘strncpy’ call is the same expression as the source; did you mean to use the size of the destination? [-Wsizeof-pointer-memaccess]
+  strncpy(buf, tsk->comm, sizeof(tsk->comm));
+                                ^
+kernel/acct.o: warning: objtool: check_free_space.cold.4()+0x0: frame pointer state mismatch
+kernel/sched/fair.o: warning: objtool: enqueue_task_fair.cold.81()+0x0: frame pointer state mismatch
+kernel/irq/chip.o: warning: objtool: handle_percpu_devid_irq.cold.25()+0x0: frame pointer state mismatch
+kernel/kexec.o: warning: objtool: do_kexec_load.cold.2()+0x0: frame pointer state mismatch
+kernel/trace/trace_stat.o: warning: objtool: register_stat_tracer.cold.2()+0x0: frame pointer state mismatch
+kernel/kexec_file.o: warning: objtool: kexec_purgatory_get_set_symbol.cold.4()+0x0: frame pointer state mismatch
+kernel/kexec_file.o: warning: objtool: SyS_kexec_file_load.cold.5()+0x0: frame pointer state mismatch
+fs/fcntl.o: warning: objtool: kill_fasync.cold.5()+0x0: frame pointer state mismatch
+kernel/sched/core.o: warning: objtool: __schedule_bug.cold.92()+0x0: frame pointer state mismatch
+kernel/sched/core.o: warning: objtool: cpu_attach_domain.cold.93()+0x0: frame pointer state mismatch
+kernel/sched/core.o: warning: objtool: select_fallback_rq.cold.94()+0x0: frame pointer state mismatch
+kernel/sched/core.o: warning: objtool: sched_show_task.cold.95()+0x0: frame pointer state mismatch
+kernel/sched/core.o: warning: objtool: build_sched_domain.cold.96()+0x0: frame pointer state mismatch
+kernel/sched/core.o: warning: objtool: build_sched_domains.cold.97()+0x0: frame pointer state mismatch
+arch/x86/events/amd/ibs.o: warning: objtool: force_ibs_eilvt_setup.cold.8()+0x0: frame pointer state mismatch
+kernel/trace/trace_output.o: warning: objtool: register_trace_event.cold.8()+0x0: frame pointer state mismatch
+arch/x86/events/core.o: warning: objtool: perf_event_print_debug.cold.24()+0x0: frame pointer state mismatch
+kernel/cgroup_pids.o: warning: objtool: pids_can_fork.cold.7()+0x0: frame pointer state mismatch
+kernel/irq/irqdomain.o: warning: objtool: irq_domain_associate.cold.20()+0x0: frame pointer state mismatch
+kernel/irq/irqdomain.o: warning: objtool: irq_create_direct_mapping.cold.21()+0x0: frame pointer state mismatch
+kernel/irq/irqdomain.o: warning: objtool: irq_domain_add_simple.cold.22()+0x0: frame pointer state mismatch
+kernel/irq/irqdomain.o: warning: objtool: irq_create_fwspec_mapping.cold.23()+0x0: frame pointer state mismatch
+kernel/trace/trace_sched_switch.o: warning: objtool: tracing_start_cmdline_record.cold.0()+0x0: frame pointer state mismatch
+mm/mmap.o: warning: objtool: reserve_mem_notifier.cold.38()+0x0: frame pointer state mismatch
+mm/mmap.o: warning: objtool: may_expand_vm.cold.39()+0x0: frame pointer state mismatch
+mm/mmap.o: warning: objtool: SyS_remap_file_pages.cold.40()+0x0: frame pointer state mismatch
+mm/memory.o: warning: objtool: print_bad_pte.cold.69()+0x0: frame pointer state mismatch
+mm/memory.o: warning: objtool: print_vma_addr.cold.70()+0x0: frame pointer state mismatch
+kernel/module.o: warning: objtool: find_symbol_in_section.cold.66()+0x0: frame pointer state mismatch
+kernel/module.o: warning: objtool: try_to_force_load.cold.67()+0x0: frame pointer state mismatch
+kernel/module.o: warning: objtool: ref_module.cold.68()+0x0: frame pointer state mismatch
+kernel/module.o: warning: objtool: unknown_module_param_cb.cold.69()+0x0: frame pointer state mismatch
+kernel/module.o: warning: objtool: check_version.isra.49.part.50.cold.70()+0x0: frame pointer state mismatch
+kernel/module.o: warning: objtool: do_init_module.cold.71()+0x0: frame pointer state mismatch
+kernel/module.o: warning: objtool: load_module.cold.72()+0x0: frame pointer state mismatch
+arch/x86/kernel/signal.o: warning: objtool: signal_fault.cold.15()+0x0: frame pointer state mismatch
+kernel/trace/trace_nop.o: warning: objtool: nop_set_flag.cold.2()+0x0: frame pointer state mismatch
+kernel/auditfilter.o: warning: objtool: audit_dupe_rule.cold.14()+0x0: frame pointer state mismatch
+kernel/auditfilter.o: warning: objtool: audit_rule_change.cold.15()+0x0: frame pointer state mismatch
+kernel/cpuset.o: warning: objtool: rebuild_sched_domains_locked.cold.32()+0x0: frame pointer state mismatch
+kernel/cpuset.o: warning: objtool: cpuset_hotplug_workfn.cold.33()+0x0: frame pointer state mismatch
+arch/x86/events/intel/core.o: warning: objtool: intel_snb_check_microcode.cold.19()+0x0: frame pointer state mismatch
+arch/x86/kernel/process_64.o: warning: objtool: release_thread.cold.4()+0x0: frame pointer state mismatch
+kernel/trace/trace.o: warning: objtool: trace_options_init_dentry.part.36.cold.73()+0x0: frame pointer state mismatch
+kernel/trace/trace.o: warning: objtool: trace_printk_init_buffers.cold.74()+0x0: frame pointer state mismatch
+kernel/trace/trace.o: warning: objtool: trace_create_file.cold.75()+0x0: frame pointer state mismatch
+kernel/trace/trace.o: warning: objtool: init_tracer_tracefs.cold.76()+0x0: frame pointer state mismatch
+kernel/trace/trace.o: warning: objtool: tracing_init_dentry.cold.77()+0x0: frame pointer state mismatch
+kernel/trace/trace.o: warning: objtool: trace_printk_seq.cold.78()+0x0: frame pointer state mismatch
+kernel/trace/trace.o: warning: objtool: ftrace_dump.cold.79()+0x0: frame pointer state mismatch
+kernel/watchdog.o: warning: objtool: watchdog_timer_fn.cold.4()+0x0: frame pointer state mismatch
+kernel/watchdog.o: warning: objtool: watchdog_enable.cold.5()+0x0: frame pointer state mismatch
+kernel/watchdog.o: warning: objtool: watchdog_overflow_callback.cold.6()+0x0: frame pointer state mismatch
+kernel/watchdog.o: warning: objtool: watchdog_enable_all_cpus.cold.7()+0x0: frame pointer state mismatch
+kernel/watchdog.o: warning: objtool: lockup_detector_suspend.cold.8()+0x0: frame pointer state mismatch
+kernel/watchdog.o: warning: objtool: proc_watchdog_cpumask.cold.9()+0x0: frame pointer state mismatch
+kernel/relay.c: In function ‘relay_create_buf_file’:
+kernel/relay.c:424:35: warning: ‘snprintf’ output may be truncated before the last format character [-Wformat-truncation=]
+  snprintf(tmpname, NAME_MAX, "%s%d", chan->base_filename, cpu);
+                                   ^
+kernel/relay.c:424:2: note: ‘snprintf’ output between 2 and 266 bytes into a destination of size 255
+  snprintf(tmpname, NAME_MAX, "%s%d", chan->base_filename, cpu);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+fs/dcache.o: warning: objtool: __d_move.cold.56()+0x0: frame pointer state mismatch
+fs/dcache.o: warning: objtool: d_splice_alias.cold.57()+0x0: frame pointer state mismatch
+kernel/auditsc.o: warning: objtool: __audit_inode_child.cold.14()+0x0: frame pointer state mismatch
+kernel/auditsc.o: warning: objtool: __audit_inode.cold.15()+0x0: frame pointer state mismatch
+kernel/trace/trace_stack.o: warning: objtool: check_stack.cold.2()+0x0: frame pointer state mismatch
+mm/vmalloc.o: warning: objtool: alloc_vmap_area.cold.38()+0x0: frame pointer state mismatch
+mm/page_io.o: warning: objtool: generic_swapfile_activate.cold.6()+0x0: frame pointer state mismatch
+mm/page_io.o: warning: objtool: __swap_writepage.cold.7()+0x0: frame pointer state mismatch
+kernel/audit.o: warning: objtool: audit_panic.cold.20()+0x0: frame pointer state mismatch
+kernel/audit.o: warning: objtool: audit_log_lost.cold.21()+0x0: frame pointer state mismatch
+kernel/audit.o: warning: objtool: kauditd_send_skb.part.13.cold.22()+0x0: frame pointer state mismatch
+kernel/audit.o: warning: objtool: audit_printk_skb.cold.23()+0x0: frame pointer state mismatch
+kernel/audit.o: warning: objtool: audit_log_start.cold.24()+0x0: frame pointer state mismatch
+kernel/trace/trace_mmiotrace.o: warning: objtool: mmio_read.cold.6()+0x0: frame pointer state mismatch
+mm/swap_state.o: warning: objtool: show_swap_cache_info.cold.3()+0x0: frame pointer state mismatch
+mm/madvise.o: warning: objtool: SyS_madvise.cold.12()+0x0: frame pointer state mismatch
+fs/inode.o: warning: objtool: init_special_inode.cold.29()+0x0: frame pointer state mismatch
+kernel/relay.o: warning: objtool: relay_close.cold.19()+0x0: frame pointer state mismatch
+kernel/relay.o: warning: objtool: relay_prepare_cpu.cold.20()+0x0: frame pointer state mismatch
+arch/x86/kernel/traps.o: warning: objtool: do_trap.cold.22()+0x0: frame pointer state mismatch
+arch/x86/kernel/traps.o: warning: objtool: do_general_protection.cold.23()+0x0: frame pointer state mismatch
+arch/x86/kernel/traps.o: warning: objtool: do_double_fault.cold.24()+0x0: frame pointer state mismatch
+arch/x86/kernel/dumpstack_64.o: warning: objtool: show_stack_log_lvl.cold.4()+0x0: frame pointer state mismatch
+arch/x86/kernel/dumpstack_64.o: warning: objtool: show_regs.cold.5()+0x0: frame pointer state mismatch
+kernel/kprobes.o: warning: objtool: write_enabled_file_bool.cold.32()+0x0: frame pointer state mismatch
+kernel/kprobes.o: warning: objtool: register_kprobe.cold.33()+0x0: frame pointer state mismatch
+arch/x86/kernel/irq.o: warning: objtool: ack_bad_irq.cold.11()+0x0: frame pointer state mismatch
+arch/x86/kernel/irq.o: warning: objtool: check_irq_vectors_for_cpu_disable.cold.12()+0x0: frame pointer state mismatch
+arch/x86/kernel/irq.o: warning: objtool: fixup_irqs.cold.13()+0x0: frame pointer state mismatch
+mm/zswap.o: warning: objtool: zswap_enabled_param_set.cold.12()+0x0: frame pointer state mismatch
+mm/zswap.o: warning: objtool: __zswap_cpu_dstmem_notifier.part.6.cold.13()+0x0: frame pointer state mismatch
+mm/zswap.o: warning: objtool: zswap_pool_create.cold.14()+0x0: frame pointer state mismatch
+mm/zswap.o: warning: objtool: zswap_frontswap_init.cold.15()+0x0: frame pointer state mismatch
+mm/zswap.o: warning: objtool: __zswap_param_set.cold.16()+0x0: frame pointer state mismatch
+fs/file.o: warning: objtool: __alloc_fd.cold.13()+0x0: frame pointer state mismatch
+kernel/cgroup.o: warning: objtool: cgroup_addrm_files.cold.45()+0x0: frame pointer state mismatch
+kernel/cgroup.o: warning: objtool: cgroup_apply_control_enable.cold.46()+0x0: frame pointer state mismatch
+kernel/cgroup.o: warning: objtool: rebind_subsystems.cold.47()+0x0: frame pointer state mismatch
+kernel/cgroup.o: warning: objtool: cgroup_remount.cold.48()+0x0: frame pointer state mismatch
+kernel/cgroup.o: warning: objtool: cgroup_mount.cold.49()+0x0: frame pointer state mismatch
+kernel/cgroup.o: warning: objtool: cgroup_sk_alloc_disable.cold.50()+0x0: frame pointer state mismatch
+arch/x86/kernel/dumpstack.o: warning: objtool: oops_end.cold.4()+0x0: frame pointer state mismatch
+arch/x86/kernel/dumpstack.o: warning: objtool: die.cold.5()+0x0: frame pointer state mismatch
+arch/x86/events/intel/pt.o: warning: objtool: pt_handle_status.cold.14()+0x0: frame pointer state mismatch
+mm/dmapool.o: warning: objtool: dma_pool_free.cold.10()+0x0: frame pointer state mismatch
+mm/dmapool.o: warning: objtool: dma_pool_destroy.cold.11()+0x0: frame pointer state mismatch
+In file included from ./include/trace/define_trace.h:96,
+                 from ./include/trace/events/writeback.h:762,
+                 from fs/fs-writeback.c:98:
+./include/trace/events/writeback.h: In function ‘perf_trace_writeback_work_class’:
+./include/trace/events/writeback.h:222:3: warning: ‘strncpy’ specified bound 32 equals destination size [-Wstringop-truncation]
+   strncpy(__entry->name,
+   ^~~~~~~~~~~~~~~~~~~~~~
+    wb->bdi->dev ? dev_name(wb->bdi->dev) : "(unknown)", 32);
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./include/trace/perf.h:65:4: note: in definition of macro ‘DECLARE_EVENT_CLASS’
+  { assign; }       \
+    ^~~~~~
+./include/trace/events/writeback.h:221:2: note: in expansion of macro ‘TP_fast_assign’
+  TP_fast_assign(
+  ^~~~~~~~~~~~~~
+./include/trace/events/writeback.h: In function ‘perf_trace_writeback_class’:
+./include/trace/events/writeback.h:276:3: warning: ‘strncpy’ specified bound 32 equals destination size [-Wstringop-truncation]
+   strncpy(__entry->name, dev_name(wb->bdi->dev), 32);
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./include/trace/perf.h:65:4: note: in definition of macro ‘DECLARE_EVENT_CLASS’
+  { assign; }       \
+    ^~~~~~
+./include/trace/events/writeback.h:275:2: note: in expansion of macro ‘TP_fast_assign’
+  TP_fast_assign(
+  ^~~~~~~~~~~~~~
+./include/trace/events/writeback.h: In function ‘perf_trace_writeback_bdi_register’:
+./include/trace/events/writeback.h:299:3: warning: ‘strncpy’ specified bound 32 equals destination size [-Wstringop-truncation]
+   strncpy(__entry->name, dev_name(bdi->dev), 32);
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./include/trace/perf.h:65:4: note: in definition of macro ‘DECLARE_EVENT_CLASS’
+  { assign; }       \
+    ^~~~~~
+./include/trace/trace_events.h:64:9: note: in expansion of macro ‘PARAMS’
+         PARAMS(assign),         \
+         ^~~~~~
+./include/trace/events/writeback.h:292:1: note: in expansion of macro ‘TRACE_EVENT’
+ TRACE_EVENT(writeback_bdi_register,
+ ^~~~~~~~~~~
+./include/trace/events/writeback.h:298:2: note: in expansion of macro ‘TP_fast_assign’
+  TP_fast_assign(
+  ^~~~~~~~~~~~~~
+./include/trace/events/writeback.h: In function ‘perf_trace_wbc_class’:
+./include/trace/events/writeback.h:324:3: warning: ‘strncpy’ specified bound 32 equals destination size [-Wstringop-truncation]
+   strncpy(__entry->name, dev_name(bdi->dev), 32);
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./include/trace/perf.h:65:4: note: in definition of macro ‘DECLARE_EVENT_CLASS’
+  { assign; }       \
+    ^~~~~~
+./include/trace/events/writeback.h:323:2: note: in expansion of macro ‘TP_fast_assign’
+  TP_fast_assign(
+  ^~~~~~~~~~~~~~
+arch/x86/kernel/nmi.o: warning: objtool: nmi_max_handler.cold.7()+0x0: frame pointer state mismatch
+arch/x86/kernel/nmi.o: warning: objtool: pci_serr_error.cold.8()+0x0: frame pointer state mismatch
+arch/x86/kernel/nmi.o: warning: objtool: unknown_nmi_error.cold.9()+0x0: frame pointer state mismatch
+./include/trace/events/writeback.h: In function ‘perf_trace_writeback_queue_io’:
+./include/trace/events/writeback.h:375:3: warning: ‘strncpy’ specified bound 32 equals destination size [-Wstringop-truncation]
+   strncpy(__entry->name, dev_name(wb->bdi->dev), 32);
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./include/trace/perf.h:65:4: note: in definition of macro ‘DECLARE_EVENT_CLASS’
+  { assign; }       \
+    ^~~~~~
+./include/trace/trace_events.h:64:9: note: in expansion of macro ‘PARAMS’
+         PARAMS(assign),         \
+         ^~~~~~
+./include/trace/events/writeback.h:360:1: note: in expansion of macro ‘TRACE_EVENT’
+ TRACE_EVENT(writeback_queue_io,
+ ^~~~~~~~~~~
+./include/trace/events/writeback.h:373:2: note: in expansion of macro ‘TP_fast_assign’
+  TP_fast_assign(
+  ^~~~~~~~~~~~~~
+kernel/trace/trace_syscalls.o: warning: objtool: syscall_enter_register.cold.21()+0x0: frame pointer state mismatch
+kernel/trace/trace_syscalls.o: warning: objtool: syscall_exit_register.cold.22()+0x0: frame pointer state mismatch
+fs/libfs.o: warning: objtool: simple_fill_super.cold.18()+0x0: frame pointer state mismatch
+arch/x86/mm/fault.o: warning: objtool: dump_pagetable.cold.24()+0x0: frame pointer state mismatch
+arch/x86/mm/fault.o: warning: objtool: no_context.cold.25()+0x0: frame pointer state mismatch
+arch/x86/mm/fault.o: warning: objtool: __bad_area_nosemaphore.cold.26()+0x0: frame pointer state mismatch
+arch/x86/mm/fault.o: warning: objtool: mm_fault_error.cold.27()+0x0: frame pointer state mismatch
+./include/trace/events/writeback.h: In function ‘perf_trace_writeback_dirty_inode_template’:
+./include/trace/events/writeback.h:98:3: warning: ‘strncpy’ specified bound 32 equals destination size [-Wstringop-truncation]
+   strncpy(__entry->name,
+   ^~~~~~~~~~~~~~~~~~~~~~
+    bdi->dev ? dev_name(bdi->dev) : "(unknown)", 32);
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./include/trace/perf.h:65:4: note: in definition of macro ‘DECLARE_EVENT_CLASS’
+  { assign; }       \
+    ^~~~~~
+./include/trace/events/writeback.h:94:2: note: in expansion of macro ‘TP_fast_assign’
+  TP_fast_assign(
+  ^~~~~~~~~~~~~~
+./include/trace/events/writeback.h: In function ‘perf_trace_writeback_write_inode_template’:
+./include/trace/events/writeback.h:178:3: warning: ‘strncpy’ specified bound 32 equals destination size [-Wstringop-truncation]
+   strncpy(__entry->name,
+   ^~~~~~~~~~~~~~~~~~~~~~
+    dev_name(inode_to_bdi(inode)->dev), 32);
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./include/trace/perf.h:65:4: note: in definition of macro ‘DECLARE_EVENT_CLASS’
+  { assign; }       \
+    ^~~~~~
+./include/trace/events/writeback.h:177:2: note: in expansion of macro ‘TP_fast_assign’
+  TP_fast_assign(
+  ^~~~~~~~~~~~~~
+./include/trace/events/writeback.h: In function ‘perf_trace_writeback_sb_inodes_requeue’:
+./include/trace/events/writeback.h:586:3: warning: ‘strncpy’ specified bound 32 equals destination size [-Wstringop-truncation]
+   strncpy(__entry->name,
+   ^~~~~~~~~~~~~~~~~~~~~~
+           dev_name(inode_to_bdi(inode)->dev), 32);
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./include/trace/perf.h:65:4: note: in definition of macro ‘DECLARE_EVENT_CLASS’
+  { assign; }       \
+    ^~~~~~
+./include/trace/trace_events.h:64:9: note: in expansion of macro ‘PARAMS’
+         PARAMS(assign),         \
+         ^~~~~~
+./include/trace/events/writeback.h:572:1: note: in expansion of macro ‘TRACE_EVENT’
+ TRACE_EVENT(writeback_sb_inodes_requeue,
+ ^~~~~~~~~~~
+./include/trace/events/writeback.h:585:2: note: in expansion of macro ‘TP_fast_assign’
+  TP_fast_assign(
+  ^~~~~~~~~~~~~~
+./include/trace/events/writeback.h: In function ‘perf_trace_writeback_single_inode_template’:
+./include/trace/events/writeback.h:660:3: warning: ‘strncpy’ specified bound 32 equals destination size [-Wstringop-truncation]
+   strncpy(__entry->name,
+   ^~~~~~~~~~~~~~~~~~~~~~
+    dev_name(inode_to_bdi(inode)->dev), 32);
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./include/trace/perf.h:65:4: note: in definition of macro ‘DECLARE_EVENT_CLASS’
+  { assign; }       \
+    ^~~~~~
+./include/trace/events/writeback.h:659:2: note: in expansion of macro ‘TP_fast_assign’
+  TP_fast_assign(
+  ^~~~~~~~~~~~~~
+./include/trace/events/writeback.h: In function ‘perf_trace_writeback_dirty_page’:
+./include/trace/events/writeback.h:68:3: warning: ‘strncpy’ specified bound 32 equals destination size [-Wstringop-truncation]
+   strncpy(__entry->name,
+   ^~~~~~~~~~~~~~~~~~~~~~
+    mapping ? dev_name(inode_to_bdi(mapping->host)->dev) : "(unknown)", 32);
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./include/trace/perf.h:65:4: note: in definition of macro ‘DECLARE_EVENT_CLASS’
+  { assign; }       \
+    ^~~~~~
+./include/trace/trace_events.h:64:9: note: in expansion of macro ‘PARAMS’
+         PARAMS(assign),         \
+         ^~~~~~
+./include/trace/events/writeback.h:55:1: note: in expansion of macro ‘TRACE_EVENT’
+ TRACE_EVENT(writeback_dirty_page,
+ ^~~~~~~~~~~
+./include/trace/events/writeback.h:67:2: note: in expansion of macro ‘TP_fast_assign’
+  TP_fast_assign(
+  ^~~~~~~~~~~~~~
+In file included from ./include/trace/define_trace.h:95,
+                 from ./include/trace/events/writeback.h:762,
+                 from fs/fs-writeback.c:98:
+./include/trace/events/writeback.h: In function ‘trace_event_raw_event_writeback_bdi_register’:
+./include/trace/events/writeback.h:299:3: warning: ‘strncpy’ specified bound 32 equals destination size [-Wstringop-truncation]
+   strncpy(__entry->name, dev_name(bdi->dev), 32);
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./include/trace/trace_events.h:686:4: note: in definition of macro ‘DECLARE_EVENT_CLASS’
+  { assign; }       \
+    ^~~~~~
+./include/trace/trace_events.h:64:9: note: in expansion of macro ‘PARAMS’
+         PARAMS(assign),         \
+         ^~~~~~
+./include/trace/events/writeback.h:292:1: note: in expansion of macro ‘TRACE_EVENT’
+ TRACE_EVENT(writeback_bdi_register,
+ ^~~~~~~~~~~
+./include/trace/events/writeback.h:298:2: note: in expansion of macro ‘TP_fast_assign’
+  TP_fast_assign(
+  ^~~~~~~~~~~~~~
+arch/x86/kernel/i8259.o: warning: objtool: mask_and_ack_8259A.cold.0()+0x0: frame pointer state mismatch
+arch/x86/kernel/i8259.o: warning: objtool: probe_8259A.cold.1()+0x0: frame pointer state mismatch
+./include/trace/events/writeback.h: In function ‘trace_event_raw_event_writeback_class’:
+./include/trace/events/writeback.h:276:3: warning: ‘strncpy’ specified bound 32 equals destination size [-Wstringop-truncation]
+   strncpy(__entry->name, dev_name(wb->bdi->dev), 32);
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./include/trace/trace_events.h:686:4: note: in definition of macro ‘DECLARE_EVENT_CLASS’
+  { assign; }       \
+    ^~~~~~
+./include/trace/events/writeback.h:275:2: note: in expansion of macro ‘TP_fast_assign’
+  TP_fast_assign(
+  ^~~~~~~~~~~~~~
+./include/trace/events/writeback.h: In function ‘trace_event_raw_event_writeback_dirty_inode_template’:
+./include/trace/events/writeback.h:98:3: warning: ‘strncpy’ specified bound 32 equals destination size [-Wstringop-truncation]
+   strncpy(__entry->name,
+   ^~~~~~~~~~~~~~~~~~~~~~
+    bdi->dev ? dev_name(bdi->dev) : "(unknown)", 32);
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./include/trace/trace_events.h:686:4: note: in definition of macro ‘DECLARE_EVENT_CLASS’
+  { assign; }       \
+    ^~~~~~
+./include/trace/events/writeback.h:94:2: note: in expansion of macro ‘TP_fast_assign’
+  TP_fast_assign(
+  ^~~~~~~~~~~~~~
+./include/trace/events/writeback.h: In function ‘trace_event_raw_event_writeback_dirty_page’:
+./include/trace/events/writeback.h:68:3: warning: ‘strncpy’ specified bound 32 equals destination size [-Wstringop-truncation]
+   strncpy(__entry->name,
+   ^~~~~~~~~~~~~~~~~~~~~~
+    mapping ? dev_name(inode_to_bdi(mapping->host)->dev) : "(unknown)", 32);
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./include/trace/trace_events.h:686:4: note: in definition of macro ‘DECLARE_EVENT_CLASS’
+  { assign; }       \
+    ^~~~~~
+./include/trace/trace_events.h:64:9: note: in expansion of macro ‘PARAMS’
+         PARAMS(assign),         \
+         ^~~~~~
+./include/trace/events/writeback.h:55:1: note: in expansion of macro ‘TRACE_EVENT’
+ TRACE_EVENT(writeback_dirty_page,
+ ^~~~~~~~~~~
+./include/trace/events/writeback.h:67:2: note: in expansion of macro ‘TP_fast_assign’
+  TP_fast_assign(
+  ^~~~~~~~~~~~~~
+./include/trace/events/writeback.h: In function ‘trace_event_raw_event_writeback_write_inode_template’:
+./include/trace/events/writeback.h:178:3: warning: ‘strncpy’ specified bound 32 equals destination size [-Wstringop-truncation]
+   strncpy(__entry->name,
+   ^~~~~~~~~~~~~~~~~~~~~~
+    dev_name(inode_to_bdi(inode)->dev), 32);
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./include/trace/trace_events.h:686:4: note: in definition of macro ‘DECLARE_EVENT_CLASS’
+  { assign; }       \
+    ^~~~~~
+./include/trace/events/writeback.h:177:2: note: in expansion of macro ‘TP_fast_assign’
+  TP_fast_assign(
+  ^~~~~~~~~~~~~~
+./include/trace/events/writeback.h: In function ‘trace_event_raw_event_writeback_queue_io’:
+./include/trace/events/writeback.h:375:3: warning: ‘strncpy’ specified bound 32 equals destination size [-Wstringop-truncation]
+   strncpy(__entry->name, dev_name(wb->bdi->dev), 32);
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./include/trace/trace_events.h:686:4: note: in definition of macro ‘DECLARE_EVENT_CLASS’
+  { assign; }       \
+    ^~~~~~
+./include/trace/trace_events.h:64:9: note: in expansion of macro ‘PARAMS’
+         PARAMS(assign),         \
+         ^~~~~~
+./include/trace/events/writeback.h:360:1: note: in expansion of macro ‘TRACE_EVENT’
+ TRACE_EVENT(writeback_queue_io,
+ ^~~~~~~~~~~
+./include/trace/events/writeback.h:373:2: note: in expansion of macro ‘TP_fast_assign’
+  TP_fast_assign(
+  ^~~~~~~~~~~~~~
+./include/trace/events/writeback.h: In function ‘trace_event_raw_event_writeback_sb_inodes_requeue’:
+./include/trace/events/writeback.h:586:3: warning: ‘strncpy’ specified bound 32 equals destination size [-Wstringop-truncation]
+   strncpy(__entry->name,
+   ^~~~~~~~~~~~~~~~~~~~~~
+           dev_name(inode_to_bdi(inode)->dev), 32);
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./include/trace/trace_events.h:686:4: note: in definition of macro ‘DECLARE_EVENT_CLASS’
+  { assign; }       \
+    ^~~~~~
+./include/trace/trace_events.h:64:9: note: in expansion of macro ‘PARAMS’
+         PARAMS(assign),         \
+         ^~~~~~
+./include/trace/events/writeback.h:572:1: note: in expansion of macro ‘TRACE_EVENT’
+ TRACE_EVENT(writeback_sb_inodes_requeue,
+ ^~~~~~~~~~~
+./include/trace/events/writeback.h:585:2: note: in expansion of macro ‘TP_fast_assign’
+  TP_fast_assign(
+  ^~~~~~~~~~~~~~
+./include/trace/events/writeback.h: In function ‘trace_event_raw_event_writeback_work_class’:
+./include/trace/events/writeback.h:222:3: warning: ‘strncpy’ specified bound 32 equals destination size [-Wstringop-truncation]
+   strncpy(__entry->name,
+   ^~~~~~~~~~~~~~~~~~~~~~
+    wb->bdi->dev ? dev_name(wb->bdi->dev) : "(unknown)", 32);
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./include/trace/trace_events.h:686:4: note: in definition of macro ‘DECLARE_EVENT_CLASS’
+  { assign; }       \
+    ^~~~~~
+./include/trace/events/writeback.h:221:2: note: in expansion of macro ‘TP_fast_assign’
+  TP_fast_assign(
+  ^~~~~~~~~~~~~~
+./include/trace/events/writeback.h: In function ‘trace_event_raw_event_wbc_class’:
+./include/trace/events/writeback.h:324:3: warning: ‘strncpy’ specified bound 32 equals destination size [-Wstringop-truncation]
+   strncpy(__entry->name, dev_name(bdi->dev), 32);
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./include/trace/trace_events.h:686:4: note: in definition of macro ‘DECLARE_EVENT_CLASS’
+  { assign; }       \
+    ^~~~~~
+./include/trace/events/writeback.h:323:2: note: in expansion of macro ‘TP_fast_assign’
+  TP_fast_assign(
+  ^~~~~~~~~~~~~~
+./include/trace/events/writeback.h: In function ‘trace_event_raw_event_writeback_single_inode_template’:
+./include/trace/events/writeback.h:660:3: warning: ‘strncpy’ specified bound 32 equals destination size [-Wstringop-truncation]
+   strncpy(__entry->name,
+   ^~~~~~~~~~~~~~~~~~~~~~
+    dev_name(inode_to_bdi(inode)->dev), 32);
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./include/trace/trace_events.h:686:4: note: in definition of macro ‘DECLARE_EVENT_CLASS’
+  { assign; }       \
+    ^~~~~~
+./include/trace/events/writeback.h:659:2: note: in expansion of macro ‘TP_fast_assign’
+  TP_fast_assign(
+  ^~~~~~~~~~~~~~
+mm/swapfile.o: warning: objtool: swap_info_get.cold.28()+0x0: frame pointer state mismatch
+mm/swapfile.o: warning: objtool: __swap_duplicate.cold.29()+0x0: frame pointer state mismatch
+mm/swapfile.o: warning: objtool: SyS_swapon.cold.30()+0x0: frame pointer state mismatch
+kernel/trace/trace_events.o: warning: objtool: __ftrace_event_enable_disable.cold.21()+0x0: frame pointer state mismatch
+kernel/trace/trace_events.o: warning: objtool: create_event_toplevel_files.cold.22()+0x0: frame pointer state mismatch
+kernel/trace/trace_events.o: warning: objtool: event_create_dir.cold.23()+0x0: frame pointer state mismatch
+kernel/trace/trace_events.o: warning: objtool: trace_module_notify.cold.24()+0x0: frame pointer state mismatch
+kernel/trace/trace_events.o: warning: objtool: event_trace_add_tracer.cold.25()+0x0: frame pointer state mismatch
+arch/x86/mm/init_64.o: warning: objtool: fill_pte.cold.11()+0x0: frame pointer state mismatch
+arch/x86/mm/init_64.o: warning: objtool: set_pte_vaddr.cold.12()+0x0: frame pointer state mismatch
+arch/x86/mm/init_64.o: warning: objtool: memory_block_size_bytes.cold.13()+0x0: frame pointer state mismatch
+fs/devpts/inode.o: warning: objtool: parse_mount_options.cold.6()+0x0: frame pointer state mismatch
+fs/devpts/inode.o: warning: objtool: devpts_fill_super.cold.7()+0x0: frame pointer state mismatch
+arch/x86/mm/ioremap.o: warning: objtool: __ioremap_caller.cold.5()+0x0: frame pointer state mismatch
+arch/x86/mm/ioremap.o: warning: objtool: iounmap.cold.6()+0x0: frame pointer state mismatch
+arch/x86/mm/extable.o: warning: objtool: ex_handler_rdmsr_unsafe.cold.0()+0x0: frame pointer state mismatch
+arch/x86/mm/extable.o: warning: objtool: ex_handler_wrmsr_unsafe.cold.1()+0x0: frame pointer state mismatch
+arch/x86/net/bpf_jit_comp.o: warning: objtool: do_jit.cold.3()+0xd: call without frame pointer save/setup
+arch/x86/net/bpf_jit_comp.o: warning: objtool: bpf_int_jit_compile.cold.4()+0x0: frame pointer state mismatch
+fs/block_dev.o: warning: objtool: flush_disk.cold.29()+0x0: frame pointer state mismatch
+fs/block_dev.o: warning: objtool: check_disk_size_change.cold.30()+0x0: frame pointer state mismatch
+fs/block_dev.o: warning: objtool: __vfs_msg.cold.31()+0x0: frame pointer state mismatch
+kernel/trace/trace_kprobe.o: warning: objtool: __register_trace_kprobe.part.7.cold.11()+0x0: frame pointer state mismatch
+kernel/trace/trace_kprobe.o: warning: objtool: trace_kprobe_module_callback.cold.12()+0x0: frame pointer state mismatch
+kernel/trace/trace_kprobe.o: warning: objtool: create_trace_kprobe.cold.13()+0x0: frame pointer state mismatch
+fs/kernfs/mount.o: warning: objtool: kernfs_node_dentry.cold.2()+0x0: frame pointer state mismatch
+In function ‘kernfs_get_target_path’,
+    inlined from ‘kernfs_getlink.isra.2’ at fs/kernfs/symlink.c:109:10,
+    inlined from ‘kernfs_iop_get_link.part.3’ at fs/kernfs/symlink.c:127:10,
+    inlined from ‘kernfs_iop_get_link’ at fs/kernfs/symlink.c:115:20:
+fs/kernfs/symlink.c:91:3: warning: ‘strncpy’ output truncated before terminating nul copying as many bytes from a string as its length [-Wstringop-truncation]
+   strncpy(s + len, kn->name, slen);
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+fs/kernfs/symlink.c: In function ‘kernfs_iop_get_link’:
+fs/kernfs/symlink.c:88:14: note: length computed here
+   int slen = strlen(kn->name);
+              ^~~~~~~~~~~~~~~~
+kernel/trace/bpf_trace.o: warning: objtool: tracing_func_proto.cold.2()+0x0: frame pointer state mismatch
+fs/fs-writeback.o: warning: objtool: block_dump___mark_inode_dirty.cold.51()+0x0: frame pointer state mismatch
+fs/hugetlbfs/inode.o: warning: objtool: hugetlbfs_parse_options.constprop.22.cold.24()+0x0: frame pointer state mismatch
+fs/hugetlbfs/inode.o: warning: objtool: hugetlb_file_setup.cold.25()+0x0: frame pointer state mismatch
+arch/x86/kernel/quirks.o: warning: objtool: ati_force_enable_hpet.cold.8()+0x0: frame pointer state mismatch
+arch/x86/kernel/quirks.o: warning: objtool: nvidia_force_enable_hpet.cold.9()+0x0: frame pointer state mismatch
+arch/x86/kernel/quirks.o: warning: objtool: vt8237_force_enable_hpet.cold.10()+0x0: frame pointer state mismatch
+arch/x86/kernel/quirks.o: warning: objtool: force_hpet_resume.cold.11()+0x0: frame pointer state mismatch
+mm/hugetlb.o: warning: objtool: hugetlb_register_node.cold.63()+0x0: frame pointer state mismatch
+mm/hugetlb.o: warning: objtool: hugetlb_show_meminfo.cold.64()+0x0: frame pointer state mismatch
+mm/hugetlb.o: warning: objtool: hugetlb_fault.cold.65()+0x0: frame pointer state mismatch
+fs/kernfs/dir.o: warning: objtool: pr_cont_kernfs_path.cold.17()+0x0: frame pointer state mismatch
+arch/x86/kernel/pci-nommu.o: warning: objtool: check_addr.cold.2()+0x0: frame pointer state mismatch
+kernel/trace/trace_probe.o: warning: objtool: parse_probe_arg.cold.9()+0x0: frame pointer state mismatch
+kernel/trace/trace_probe.o: warning: objtool: traceprobe_parse_probe_arg.cold.10()+0x0: frame pointer state mismatch
+kernel/trace/trace_probe.o: warning: objtool: traceprobe_probes_write.cold.11()+0x0: frame pointer state mismatch
+fs/buffer.o: warning: objtool: buffer_io_error.cold.45()+0x0: frame pointer state mismatch
+fs/buffer.o: warning: objtool: do_thaw_one.cold.46()+0x0: frame pointer state mismatch
+fs/buffer.o: warning: objtool: __find_get_block_slow.cold.47()+0x0: frame pointer state mismatch
+fs/buffer.o: warning: objtool: __getblk_gfp.cold.48()+0x0: frame pointer state mismatch
+fs/buffer.o: warning: objtool: SyS_bdflush.cold.49()+0x0: frame pointer state mismatch
+arch/x86/kernel/acpi/apei.o: warning: objtool: arch_apei_enable_cmcff.cold.0()+0x0: frame pointer state mismatch
+arch/x86/kernel/apic/apic_noop.o: warning: objtool: noop_vector_allocation_domain.cold.2()+0x0: frame pointer state mismatch
+arch/x86/kernel/rtc.o: warning: objtool: mach_set_rtc_mmss.cold.0()+0x0: frame pointer state mismatch
+arch/x86/kernel/tsc.o: warning: objtool: tsc_refine_calibration_work.cold.2()+0x0: frame pointer state mismatch
+arch/x86/kernel/tsc.o: warning: objtool: native_calibrate_cpu.cold.3()+0x0: frame pointer state mismatch
+arch/x86/kernel/alternative.o: warning: objtool: apply_alternatives.cold.5()+0x0: frame pointer state mismatch
+arch/x86/kernel/alternative.o: warning: objtool: alternatives_smp_module_add.cold.6()+0x0: frame pointer state mismatch
+arch/x86/kernel/alternative.o: warning: objtool: alternatives_enable_smp.cold.7()+0x0: frame pointer state mismatch
+arch/x86/mm/pgtable.o: warning: objtool: pmd_set_huge.cold.13()+0x0: frame pointer state mismatch
+mm/memory_hotplug.o: warning: objtool: check_hotplug_memory_range.cold.34()+0x0: frame pointer state mismatch
+mm/memory_hotplug.o: warning: objtool: __remove_pages.cold.35()+0x0: frame pointer state mismatch
+mm/memory_hotplug.o: warning: objtool: check_memblock_offlined_cb.cold.36()+0x0: frame pointer state mismatch
+mm/memory_hotplug.o: warning: objtool: try_online_node.cold.37()+0x0: frame pointer state mismatch
+arch/x86/xen/setup.o: warning: objtool: xen_enable_syscall.cold.4()+0x0: frame pointer state mismatch
+arch/x86/mm/pat.o: warning: objtool: __init_cache_modes.cold.10()+0x0: frame pointer state mismatch
+arch/x86/mm/pat.o: warning: objtool: pat_disable.cold.11()+0x0: frame pointer state mismatch
+arch/x86/mm/pat.o: warning: objtool: pat_init.cold.12()+0x0: frame pointer state mismatch
+arch/x86/mm/pat.o: warning: objtool: reserve_memtype.cold.13()+0x0: frame pointer state mismatch
+arch/x86/mm/pat.o: warning: objtool: free_memtype.cold.14()+0x0: frame pointer state mismatch
+arch/x86/mm/pat.o: warning: objtool: kernel_map_sync_memtype.cold.15()+0x0: frame pointer state mismatch
+arch/x86/mm/pat.o: warning: objtool: reserve_pfn_range.cold.16()+0x0: frame pointer state mismatch
+fs/pstore/platform.o: warning: objtool: allocate_zlib.cold.2()+0x0: frame pointer state mismatch
+fs/pstore/platform.o: warning: objtool: pstore_get_records.cold.3()+0x0: frame pointer state mismatch
+fs/pstore/platform.o: warning: objtool: pstore_register.cold.4()+0x0: frame pointer state mismatch
+fs/proc/inode.o: warning: objtool: proc_fill_super.cold.5()+0x0: frame pointer state mismatch
+arch/x86/kernel/process.o: warning: objtool: amd_e400_idle.cold.9()+0x0: frame pointer state mismatch
+arch/x86/kernel/process.o: warning: objtool: select_idle_routine.cold.10()+0x0: frame pointer state mismatch
+arch/x86/kernel/acpi/cstate.o: warning: objtool: acpi_processor_ffh_cstate_probe_cpu.cold.0()+0x0: frame pointer state mismatch
+arch/x86/kernel/acpi/boot.o: warning: objtool: acpi_register_lapic.cold.4()+0x0: frame pointer state mismatch
+arch/x86/kernel/acpi/boot.o: warning: objtool: acpi_map_cpu.cold.5()+0x0: frame pointer state mismatch
+arch/x86/kernel/kprobes/core.o: warning: objtool: longjmp_break_handler.cold.13()+0x0: frame pointer state mismatch
+arch/x86/kernel/kprobes/core.o: warning: objtool: reenter_kprobe.cold.14()+0x0: frame pointer state mismatch
+arch/x86/kernel/kprobes/core.o: warning: objtool: __copy_instruction.cold.15()+0x0: frame pointer state mismatch
+fs/notify/inotify/inotify_fsnotify.o: warning: objtool: idr_callback.cold.2()+0x0: frame pointer state mismatch
+fs/proc/root.o: warning: objtool: proc_parse_options.cold.1()+0x0: frame pointer state mismatch
+arch/x86/mm/pat_rbtree.o: warning: objtool: rbt_memtype_check_insert.cold.8()+0x0: frame pointer state mismatch
+mm/khugepaged.o: warning: objtool: start_stop_khugepaged.cold.40()+0x0: frame pointer state mismatch
+arch/x86/kernel/apic/apic.o: warning: objtool: __x2apic_enable.cold.15()+0x0: frame pointer state mismatch
+arch/x86/kernel/apic/apic.o: warning: objtool: lapic_setup_esr.cold.16()+0x0: frame pointer state mismatch
+arch/x86/kernel/apic/apic.o: warning: objtool: local_apic_timer_interrupt.cold.17()+0x0: frame pointer state mismatch
+arch/x86/kernel/apic/apic.o: warning: objtool: set_multi.cold.18()+0x0: frame pointer state mismatch
+arch/x86/kernel/apic/apic.o: warning: objtool: __setup_APIC_LVTT.cold.19()+0x0: frame pointer state mismatch
+arch/x86/kernel/apic/apic.o: warning: objtool: __x2apic_disable.part.6.cold.20()+0x0: frame pointer state mismatch
+arch/x86/kernel/apic/apic.o: warning: objtool: __smp_error_interrupt.isra.7.cold.21()+0x0: frame pointer state mismatch
+arch/x86/kernel/apic/apic.o: warning: objtool: setup_local_APIC.cold.22()+0x0: frame pointer state mismatch
+arch/x86/kernel/apic/apic.o: warning: objtool: __generic_processor_info.cold.23()+0x0: frame pointer state mismatch
+arch/x86/xen/enlighten.o: warning: objtool: xen_pin_vcpu()+0x37: sibling call from callable instruction with changed frame pointer
+arch/x86/xen/enlighten.o: warning: objtool: xen_pin_vcpu.cold.22()+0xa: call without frame pointer save/setup
+arch/x86/xen/enlighten.o: warning: objtool: xen_vcpu_setup.cold.23()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/topology.o: warning: objtool: detect_extended_topology.cold.0()+0x0: frame pointer state mismatch
+arch/x86/kernel/apic/x2apic_phys.o: warning: objtool: x2apic_phys_probe.cold.4()+0x0: frame pointer state mismatch
+arch/x86/kernel/apic/x2apic_phys.o: warning: objtool: x2apic_acpi_madt_oem_check.cold.5()+0x0: frame pointer state mismatch
+arch/x86/kernel/tsc_sync.o: warning: objtool: check_tsc_sync_source.cold.0()+0x0: frame pointer state mismatch
+arch/x86/kernel/apic/htirq.o: warning: objtool: arch_init_htirq_domain.cold.4()+0x0: frame pointer state mismatch
+mm/huge_memory.o: warning: objtool: split_huge_pages_set.cold.56()+0x0: frame pointer state mismatch
+fs/notify/inotify/inotify_user.o: warning: objtool: inotify_remove_from_idr.cold.3()+0x0: frame pointer state mismatch
+arch/x86/kernel/apic/msi.o: warning: objtool: arch_init_msi_domain.cold.3()+0x0: frame pointer state mismatch
+arch/x86/mm/dump_pagetables.o: warning: objtool: note_page.cold.2()+0x0: frame pointer state mismatch
+arch/x86/mm/dump_pagetables.o: warning: objtool: ptdump_walk_pgd_level_core.cold.3()+0x0: frame pointer state mismatch
+arch/x86/kernel/reboot.o: warning: objtool: native_machine_emergency_restart.cold.3()+0x0: frame pointer state mismatch
+arch/x86/mm/pf_in.o: warning: objtool: get_ins_reg_width.cold.0()+0x0: frame pointer state mismatch
+mm/zpool.o: warning: objtool: zpool_create_pool.cold.0()+0x0: frame pointer state mismatch
+arch/x86/kernel/apic/x2apic_cluster.o: warning: objtool: x2apic_cluster_probe.cold.5()+0x0: frame pointer state mismatch
+fs/quota/dquot.o: warning: objtool: __quota_error.cold.31()+0x0: frame pointer state mismatch
+mm/slub.o: warning: objtool: init_cache_random_seq.cold.83()+0x0: frame pointer state mismatch
+mm/slub.o: warning: objtool: slab_out_of_memory.cold.84()+0x0: frame pointer state mismatch
+mm/slub.o: warning: objtool: slab_pad_check.part.54.cold.85()+0x0: frame pointer state mismatch
+mm/slub.o: warning: objtool: check_slab.cold.86()+0x0: frame pointer state mismatch
+mm/slub.o: warning: objtool: new_slab.cold.87()+0x0: frame pointer state mismatch
+mm/slub.o: warning: objtool: check_bytes_and_report.cold.88()+0x0: frame pointer state mismatch
+mm/slub.o: warning: objtool: alloc_debug_processing.cold.89()+0x0: frame pointer state mismatch
+mm/slub.o: warning: objtool: on_freelist.cold.90()+0x0: frame pointer state mismatch
+mm/slub.o: warning: objtool: free_debug_processing.cold.91()+0x0: frame pointer state mismatch
+mm/slub.o: warning: objtool: validate_store.cold.92()+0x0: frame pointer state mismatch
+mm/slub.o: warning: objtool: kmem_cache_free.cold.93()+0x0: frame pointer state mismatch
+mm/slub.o: warning: objtool: kmem_cache_free_bulk.cold.94()+0x0: frame pointer state mismatch
+mm/slub.o: warning: objtool: __kmem_cache_shutdown.cold.95()+0x0: frame pointer state mismatch
+mm/slub.o: warning: objtool: __kmem_cache_create.cold.96()+0x0: frame pointer state mismatch
+arch/x86/mm/kmmio.o: warning: objtool: clear_page_presence.cold.2()+0x0: frame pointer state mismatch
+arch/x86/mm/kmmio.o: warning: objtool: unregister_kmmio_probe.cold.3()+0x0: frame pointer state mismatch
+arch/x86/kernel/apic/io_apic.o: warning: objtool: irq_trigger.cold.17()+0x0: frame pointer state mismatch
+arch/x86/kernel/apic/io_apic.o: warning: objtool: clear_IO_APIC_pin.cold.18()+0x0: frame pointer state mismatch
+arch/x86/kernel/apic/io_apic.o: warning: objtool: alloc_ioapic_saved_registers.part.7.cold.19()+0x0: frame pointer state mismatch
+arch/x86/kernel/apic/io_apic.o: warning: objtool: __add_pin_to_irq_node.cold.20()+0x0: frame pointer state mismatch
+arch/x86/kernel/apic/io_apic.o: warning: objtool: mp_save_irq.cold.21()+0x0: frame pointer state mismatch
+arch/x86/kernel/apic/io_apic.o: warning: objtool: mp_find_ioapic.cold.22()+0x0: frame pointer state mismatch
+arch/x86/kernel/apic/io_apic.o: warning: objtool: acpi_get_override_irq.cold.23()+0x0: frame pointer state mismatch
+arch/x86/kernel/apic/io_apic.o: warning: objtool: pin_2_irq.cold.24()+0x0: frame pointer state mismatch
+arch/x86/kernel/apic/io_apic.o: warning: objtool: IO_APIC_get_PCI_irq_vector.cold.25()+0x0: frame pointer state mismatch
+arch/x86/kernel/apic/io_apic.o: warning: objtool: mp_irqdomain_alloc.cold.26()+0x0: frame pointer state mismatch
+arch/x86/kernel/apic/io_apic.o: warning: objtool: mp_register_ioapic.cold.27()+0x0: frame pointer state mismatch
+arch/x86/kernel/apic/io_apic.o: warning: objtool: mp_unregister_ioapic.cold.28()+0x0: frame pointer state mismatch
+mm/memory-failure.o: warning: objtool: get_hwpoison_page.cold.21()+0x0: frame pointer state mismatch
+mm/memory-failure.o: warning: objtool: add_to_kill.cold.22()+0x0: frame pointer state mismatch
+mm/memory-failure.o: warning: objtool: __get_any_page.cold.23()+0x0: frame pointer state mismatch
+mm/memory-failure.o: warning: objtool: me_pagecache_clean.cold.24()+0x0: frame pointer state mismatch
+mm/memory-failure.o: warning: objtool: unpoison_memory.cold.25()+0x0: frame pointer state mismatch
+mm/memory-failure.o: warning: objtool: memory_failure.cold.26()+0x0: frame pointer state mismatch
+mm/memory-failure.o: warning: objtool: soft_offline_page.cold.27()+0x0: frame pointer state mismatch
+arch/x86/kernel/ftrace.o: warning: objtool: ftrace_replace_code.cold.9()+0x0: frame pointer state mismatch
+arch/x86/mm/mmio-mod.o: warning: objtool: post.cold.2()+0x0: frame pointer state mismatch
+arch/x86/mm/mmio-mod.o: warning: objtool: pre.cold.3()+0x0: frame pointer state mismatch
+arch/x86/mm/mmio-mod.o: warning: objtool: mmiotrace_ioremap.cold.4()+0x0: frame pointer state mismatch
+arch/x86/mm/mmio-mod.o: warning: objtool: enable_mmiotrace.cold.5()+0x0: frame pointer state mismatch
+arch/x86/mm/mmio-mod.o: warning: objtool: disable_mmiotrace.cold.6()+0x0: frame pointer state mismatch
+fs/proc/base.o: warning: objtool: __set_oom_adj.cold.22()+0x0: frame pointer state mismatch
+arch/x86/kernel/apic/apic_flat_64.o: warning: objtool: physflat_acpi_madt_oem_check.cold.2()+0x0: frame pointer state mismatch
+arch/x86/kernel/smpboot.o: warning: objtool: topology_update_package_map.cold.13()+0x0: frame pointer state mismatch
+arch/x86/kernel/smpboot.o: warning: objtool: wakeup_secondary_cpu_via_nmi.cold.14()+0x0: frame pointer state mismatch
+arch/x86/kernel/smpboot.o: warning: objtool: native_cpu_up.cold.15()+0x0: frame pointer state mismatch
+arch/x86/kernel/smpboot.o: warning: objtool: common_cpu_die.cold.16()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/common.o: warning: objtool: __print_cpu_msr.cold.13()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/common.o: warning: objtool: filter_cpuid_features.cold.14()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/common.o: warning: objtool: get_cpu_vendor.cold.15()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/common.o: warning: objtool: detect_ht.cold.16()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/common.o: warning: objtool: identify_secondary_cpu.cold.17()+0x0: frame pointer state mismatch
+mm/usercopy.o: warning: objtool: __check_object_size.cold.2()+0x0: frame pointer state mismatch
+arch/x86/kernel/machine_kexec_64.o: warning: objtool: arch_kexec_apply_relocations_add.cold.4()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/rdrand.o: warning: objtool: x86_init_rdrand.cold.0()+0x0: frame pointer state mismatch
+arch/x86/kernel/kexec-bzimage64.o: warning: objtool: bzImage64_probe.cold.4()+0x0: frame pointer state mismatch
+arch/x86/kernel/kexec-bzimage64.o: warning: objtool: bzImage64_load.cold.5()+0x0: frame pointer state mismatch
+arch/x86/kernel/module.o: warning: objtool: apply_relocate_add.cold.1()+0x0: frame pointer state mismatch
+fs/quota/netlink.o: warning: objtool: quota_send_warning.cold.3()+0x0: frame pointer state mismatch
+arch/x86/xen/platform-pci-unplug.o: warning: objtool: xen_unplug_emulated_devices.cold.3()+0x0: frame pointer state mismatch
+arch/x86/kernel/crash.o: warning: objtool: exclude_mem_range.cold.5()+0x0: frame pointer state mismatch
+fs/proc/self.o: warning: objtool: proc_setup_self.cold.2()+0x0: frame pointer state mismatch
+fs/proc/thread_self.o: warning: objtool: proc_setup_thread_self.cold.2()+0x0: frame pointer state mismatch
+arch/x86/xen/pmu.o: warning: objtool: xen_get_guest_ip.cold.4()+0x0: frame pointer state mismatch
+arch/x86/xen/pmu.o: warning: objtool: xen_is_user_mode.cold.5()+0x0: frame pointer state mismatch
+arch/x86/xen/pmu.o: warning: objtool: xen_is_in_guest.cold.6()+0x0: frame pointer state mismatch
+arch/x86/xen/pmu.o: warning: objtool: pmu_apic_update.cold.7()+0x0: frame pointer state mismatch
+arch/x86/xen/pmu.o: warning: objtool: xen_pmu_irq_handler.cold.8()+0x0: frame pointer state mismatch
+arch/x86/xen/pmu.o: warning: objtool: xen_pmu_init.cold.9()+0x0: frame pointer state mismatch
+arch/x86/xen/spinlock.o: warning: objtool: xen_init_lock_cpu.cold.0()+0x0: frame pointer state mismatch
+fs/proc/proc_sysctl.o: warning: objtool: sysctl_print_dir.isra.12.cold.25()+0x0: frame pointer state mismatch
+fs/proc/proc_sysctl.o: warning: objtool: insert_header.cold.26()+0x0: frame pointer state mismatch
+fs/proc/proc_sysctl.o: warning: objtool: __register_sysctl_table.cold.27()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/mcheck/mce-genpool.o: warning: objtool: mce_gen_pool_add.cold.0()+0x0: frame pointer state mismatch
+arch/x86/kernel/hpet.o: warning: objtool: hpet_msi_resume.cold.16()+0x0: frame pointer state mismatch
+arch/x86/kernel/hpet.o: warning: objtool: hpet_rtc_interrupt.cold.17()+0x0: frame pointer state mismatch
+arch/x86/kernel/hpet.o: warning: objtool: hpet_interrupt_handler.cold.18()+0x0: frame pointer state mismatch
+arch/x86/kernel/hpet.o: warning: objtool: hpet_set_periodic.isra.10.cold.19()+0x0: frame pointer state mismatch
+arch/x86/kernel/hpet.o: warning: objtool: hpet_legacy_resume.cold.20()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/intel.o: warning: objtool: init_intel_energy_perf.part.2.cold.5()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/intel.o: warning: objtool: early_init_intel.cold.6()+0x0: frame pointer state mismatch
+mm/memcontrol.o: warning: objtool: mem_cgroup_print_oom_info.cold.52()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/microcode/intel_lib.o: warning: objtool: microcode_sanity_check.cold.1()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/amd.o: warning: objtool: bsp_init_amd.cold.7()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/amd.o: warning: objtool: init_amd.cold.8()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/vmware.o: warning: objtool: vmware_get_tsc_khz.cold.1()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/microcode/amd.c: In function ‘load_ucode_amd_bsp’:
+arch/x86/kernel/cpu/microcode/amd.c:274:37: warning: ‘h.bin’ directive output may be truncated writing 5 bytes into a region of size between 1 and 7 [-Wformat-truncation=]
+     "amd-ucode/microcode_amd_fam%.2xh.bin", family);
+                                     ^~~~~
+arch/x86/kernel/cpu/microcode/amd.c:273:3: note: ‘snprintf’ output between 35 and 41 bytes into a destination of size 36
+   snprintf(fw_name, sizeof(fw_name),
+   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     "amd-ucode/microcode_amd_fam%.2xh.bin", family);
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+arch/x86/kernel/mmconf-fam10h_64.o: warning: objtool: fam10h_check_enable_mmcfg.cold.0()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/microcode/core.o: warning: objtool: microcode_write.cold.3()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/microcode/core.o: warning: objtool: mc_cpu_online.cold.4()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/microcode/amd.o: warning: objtool: collect_cpu_info_amd.cold.7()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/microcode/amd.o: warning: objtool: reload_ucode_amd.cold.8()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/microcode/amd.o: warning: objtool: apply_microcode_amd.cold.9()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/microcode/amd.o: warning: objtool: load_microcode_amd.cold.10()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/microcode/amd.o: warning: objtool: request_microcode_amd.cold.11()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/mcheck/mce_intel.o: warning: objtool: cmci_discover.cold.5()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/mcheck/mce_intel.o: warning: objtool: intel_threshold_interrupt.cold.6()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/mcheck/mce_intel.o: warning: objtool: cmci_intel_adjust_timer.cold.7()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/mtrr/main.o: warning: objtool: mtrr_add_page.cold.6()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/mtrr/main.o: warning: objtool: mtrr_add.cold.7()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/mtrr/main.o: warning: objtool: arch_phys_wc_add.cold.8()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/mtrr/main.o: warning: objtool: mtrr_del_page.cold.9()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/mtrr/main.o: warning: objtool: mtrr_del.cold.10()+0x0: frame pointer state mismatch
+arch/x86/kernel/amd_gart_64.o: warning: objtool: iommu_full.cold.15()+0x0: frame pointer state mismatch
+arch/x86/kernel/amd_gart_64.o: warning: objtool: dma_map_area.cold.16()+0x0: frame pointer state mismatch
+arch/x86/kernel/amd_gart_64.o: warning: objtool: gart_map_sg.cold.17()+0x0: frame pointer state mismatch
+arch/x86/kernel/pci-calgary_64.o: warning: objtool: iommu_range_alloc.cold.11()+0x0: frame pointer state mismatch
+arch/x86/kernel/pci-calgary_64.o: warning: objtool: iommu_alloc.cold.12()+0x0: frame pointer state mismatch
+arch/x86/kernel/pci-calgary_64.o: warning: objtool: calioc2_dump_error_regs.cold.13()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/microcode/intel.o: warning: objtool: collect_cpu_info.cold.15()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/microcode/intel.o: warning: objtool: apply_microcode_intel.cold.16()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/microcode/intel.o: warning: objtool: save_mc_for_early.cold.17()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/microcode/intel.o: warning: objtool: generic_load_microcode.cold.18()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/microcode/intel.o: warning: objtool: apply_microcode_early.cold.19()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/mtrr/generic.o: warning: objtool: generic_validate_add_page.cold.6()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/mtrr/generic.o: warning: objtool: generic_get_mtrr.cold.7()+0x0: frame pointer state mismatch
+fs/eventpoll.o: warning: objtool: reverse_path_check_proc.cold.17()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/mcheck/mce_amd.o: warning: objtool: threshold_restart_bank.cold.11()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/mcheck/mce_amd.o: warning: objtool: mce_amd_feature_init.cold.12()+0x0: frame pointer state mismatch
+fs/drop_caches.o: warning: objtool: drop_caches_sysctl_handler.cold.0()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/mcheck/mce.o: warning: objtool: wait_for_panic.cold.39()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/mcheck/mce.o: warning: objtool: mce_panic.cold.40()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/mcheck/mce.o: warning: objtool: mce_notify_irq.cold.41()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/mcheck/mce.o: warning: objtool: do_machine_check.cold.42()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/mcheck/mce.o: warning: objtool: mcheck_cpu_init.cold.43()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/mcheck/mce.o: warning: objtool: mce_disable_bank.cold.44()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/mcheck/therm_throt.o: warning: objtool: therm_throt_process.cold.3()+0x0: frame pointer state mismatch
+arch/x86/kernel/cpu/mcheck/therm_throt.o: warning: objtool: intel_init_thermal.cold.4()+0x0: frame pointer state mismatch
+fs/coredump.o: warning: objtool: do_coredump.cold.12()+0x0: frame pointer state mismatch
+fs/locks.o: warning: objtool: lease_modify.cold.41()+0x0: frame pointer state mismatch
+fs/locks.o: warning: objtool: locks_free_lock_context.cold.42()+0x0: frame pointer state mismatch

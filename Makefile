@@ -1042,8 +1042,12 @@ ifdef CONFIG_STACK_VALIDATION
 		echo "int main() {}" | $(HOSTCC) -xc -o /dev/null -lelf -,1,0)
   ifeq ($(has_libelf),1)
     objtool_target := tools/objtool FORCE
-  else
-    $(warning "Cannot use CONFIG_STACK_VALIDATION, please install libelf-dev, libelf-devel or elfutils-libelf-devel")
+  else # TODO cambiado por mi, ver https://lore.kernel.org/patchwork/patch/836886/
+    ifdef CONFIG_ORC_UNWINDER
+       $(error "Cannot generate ORC metadata for CONFIG_ORC_UNWINDER=y, please install libelf-dev, libelf-devel or elfutils-libelf-devel")
+    else
+      $(warning "Cannot use CONFIG_STACK_VALIDATION=y, please install libelf-dev, libelf-devel or elfutils-libelf-devel")
+    endif
     SKIP_STACK_VALIDATION := 1
     export SKIP_STACK_VALIDATION
   endif
