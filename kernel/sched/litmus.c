@@ -286,7 +286,7 @@ static struct task_struct *pick_next_task_litmus(struct rq *rq,
 	 * provide a task, and if we find one, call put_prev_task() on the
 	 * previously scheduled task.
 	 */
-	if (next)
+	if (next && !is_realtime(next))
 		put_prev_task(rq, prev);
 
 	return next;
