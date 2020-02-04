@@ -734,6 +734,7 @@ void hrtimer_start_on(int cpu, struct hrtimer_start_on_info *info,
 
 static int __init _init_litmus(void)
 {
+	int ret;
 	/*      Common initializers,
 	 *      mode change lock is used to enforce single mode change
 	 *      operation.
@@ -753,11 +754,15 @@ static int __init _init_litmus(void)
 		printk("Could not register kill rt tasks magic sysrq.\n");
 #endif
 
-	init_litmus_proc();
+	ret = init_litmus_proc();
+	
+	if (ret != 0){
+		printk(KERN_WARNING "There is not enough memory for the LITMUS^RT proc.\n");
+	}
 
 	register_reboot_notifier(&shutdown_notifier);
 
-	return 0;
+	return ret;
 }
 
 static void _exit_litmus(void)
