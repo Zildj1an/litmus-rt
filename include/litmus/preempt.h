@@ -32,6 +32,8 @@ DECLARE_PER_CPU(bool, litmus_preemption_in_progress);
 	((current)->state == TASK_RUNNING || \
 	this_cpu_read(litmus_preemption_in_progress))
 
+/* The rescheduling state of each processor.
+ */
 DECLARE_PER_CPU_SHARED_ALIGNED(atomic_t, resched_state);
 
 #ifdef CONFIG_PREEMPT_STATE_TRACE
