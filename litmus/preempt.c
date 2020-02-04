@@ -5,12 +5,6 @@
 #include <litmus/preempt.h>
 #include <litmus/trace.h>
 
-DEFINE_PER_CPU(bool, litmus_preemption_in_progress);
-
-/* The rescheduling state of each processor.
- */
-DEFINE_PER_CPU_SHARED_ALIGNED(atomic_t, resched_state);
-
 void sched_state_will_schedule(struct task_struct* tsk)
 {
 	/* Litmus hack: we only care about processor-local invocations of
